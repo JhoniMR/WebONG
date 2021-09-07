@@ -11,13 +11,19 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
+import { PruebaComponent } from './pages/prueba/prueba.component';
+import { PdadadComponent } from './pages/pdadad/pdadad.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PruebaComponent,
+    PdadadComponent,
+   
   ],
   imports: [
     BrowserModule,
