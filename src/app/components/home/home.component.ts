@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'app/data/auth.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  informacion: any[] = [];
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.getMostrar();
+  }
+
+  getMostrar(){
+    this.authService.getNoticias().subscribe(data =>{
+      this.informacion = [];
+        data.forEach((element:any) =>{
+          this.informacion.push({
+            id: element.payload.doc.id,
+            ...element.payload.doc.data()
+          })
+        });
+        console.log(this.informacion);
+    });
   }
 
 }

@@ -6,6 +6,7 @@ import { AuthService } from 'app/data/auth.service';
 import { ToastrService } from 'ngx-toastr';
 
 //import { Observable } from 'rxjs';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-from',
@@ -49,13 +50,18 @@ export class FromComponent implements OnInit {
     
 
     this.authService.agregarNoticias(valores).then(() => {
-      this.toastr.success('Hola maricos');
-    this.router.navigate(['/inicio']);    
+     Swal.fire(
+        'Se a guardado con exito!',
+        '',
+        'success'
+      )
+    this.router.navigate(['/inicio']); 
+    return;   
     }).catch(error =>{
       
       console.log('Esto es un error');
     })
-  }
+  }   
 
   ngOnInit(): void {
   }

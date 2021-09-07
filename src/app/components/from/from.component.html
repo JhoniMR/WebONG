@@ -37,9 +37,10 @@
                                 <textarea formControlName ="descripcion" appearance="fill"  matInput #message maxlength="3000" class="form-control" type="text" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
                                 <mat-hint align="end">{{message.value.length}} / 3000</mat-hint>
                                <div class="row">
-                                 <div class="btn-formulario">
+                            
+                            <div class="btn-formulario">
                                      
-                                  <button type="submit" (click)="agregarNoticia()" class="btn btn-danger btn-lg btn-fill" >
+                                  <button type="submit" class="btn btn-danger btn-lg btn-fill" >
                                       Agregar Reporte
                                       <div *ngIf="loading" class="spinner-border float" role="status">
                                         <span class="sr-only">Cargando ...</span>    
