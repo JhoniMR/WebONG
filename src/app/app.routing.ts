@@ -9,15 +9,17 @@ import { SignupComponent } from './examples/signup/signup.component';
 import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 
-/*PAG*/
+/*PAGUINAS*/
 import { HomeComponent } from '../app/components/home/home.component';
 import { FromComponent } from '../app/components/from/from.component';
+import { LoginComponent } from '../app/components/login/login.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
 
     { path: 'inicio',             component: HomeComponent },
     { path: 'from',               component: FromComponent },
+    { path: 'login',              component: LoginComponent },
 
     
     { path: 'home',             component: ComponentsComponent },

@@ -1,0 +1,12 @@
+.landing-section {
+    z-index: 1;
+    border-radius: 30px;
+}
+
+.logo-formulario{
+  text-align: center;
+}
+
+.btn-formulario{
+    margin: auto;
+}
