@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NouisliderModule } from 'ng2-nouislider';
 import { JwBootstrapSwitchNg2Module } from 'jw-bootstrap-switch-ng2';
 import { RouterModule } from '@angular/router';
@@ -15,9 +15,20 @@ import { NotificationComponent } from './notification/notification.component';
 import { NgbdModalComponent } from './modal/modal.component';
 import { NgbdModalContent } from './modal/modal.component';
 
+/*MODULOS*/
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+/*ESTILOS - ANGULAR*/
+import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
+/*PAGUINAS*/
 import { HomeComponent } from './home/home.component';
 import { FromComponent } from './from/from.component';
 import { LoginComponent } from './login/login.component';
+import { environment } from 'environments/environment';
 
 @NgModule({
     imports: [
@@ -26,7 +37,13 @@ import { LoginComponent } from './login/login.component';
         NgbModule,
         NouisliderModule,
         RouterModule,
-        JwBootstrapSwitchNg2Module
+        JwBootstrapSwitchNg2Module,
+        MatInputModule, 
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule, 
+        ReactiveFormsModule,
+        ToastrModule.forRoot(), // ToastrModule added 
+        BrowserAnimationsModule,
     ],
     declarations: [
         ComponentsComponent,

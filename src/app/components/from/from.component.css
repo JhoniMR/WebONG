@@ -1,3 +1,5 @@
+
+
 .landing-section {
     z-index: 1;
     border-radius: 30px;
@@ -10,3 +12,24 @@
 .btn-formulario{
     margin: auto;
 }
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+textarea#mat-input-0 {
+  border: #ddd 1px solid;
+}
+
+.alerta-campos{
+  text-align: center;
+  margin-top: 15px;
+  font-size: 18px;
+}
+

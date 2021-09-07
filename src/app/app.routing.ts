@@ -15,7 +15,7 @@ import { FromComponent } from '../app/components/from/from.component';
 import { LoginComponent } from '../app/components/login/login.component';
 
 const routes: Routes =[
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'from', pathMatch: 'full' },
 
     { path: 'inicio',             component: HomeComponent },
     { path: 'from',               component: FromComponent },

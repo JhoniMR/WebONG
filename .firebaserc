@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "webong-3ccda": {
+      "hosting": {
+        "pk2-angular": [
+          "webong-3ccda"
+        ]
+      }
+    }
+  }
+}
