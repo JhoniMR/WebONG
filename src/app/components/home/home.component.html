@@ -167,11 +167,12 @@
 
 
 <!-- FORMATO NOTICIA -->
-<div class="contend-formato">
+<div class="contend-formato" *ngFor="let item of informacion">
  <div class="formato1">
     <div class="row">
        <div class="col-md-4 mr-auto ml-auto">
-          <img src="assets/img/uriel-soberanes.jpg" class="img-rounded img-responsive" alt="Rounded Image">
+        <video src="https://www.youtube.com/watch?v=SRNmSeUqB0o&ab_channel=Emprinnos"></video>
+          <img [src]="item.imagen" class="img-rounded img-responsive" alt="Rounded Image">
          <div class="img-details">
              <div class="author">
                  <img src="assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
@@ -180,24 +181,17 @@
        </div>
        <div  class="col-md-7 mr-auto ml-auto">
           <div class="titulo-noticia">
-             <h1>Business Name or Tagline</h1>
+             <h1>{{item.titulo}}</h1>
           </div>
           <div class="contenido-text">
-            <p style="text-align: justify;">This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                This is a template that is great for smssssall businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+            <p style="text-align: justify;">{{item.descripcion}}</p>
           </div>
           <a class="btn btn-primary" href="#!">Call to Action!</a>
        </div>
      </div>
    </div>
 </div> 
+
    <br><br><br>
    
      <!--OTRO FORMATO-->
