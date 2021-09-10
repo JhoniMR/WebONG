@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 //import { AngularFirestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'app/data/auth.service';
-import { ToastrService } from 'ngx-toastr';
+
 
 //import { Observable } from 'rxjs';
 import Swal from 'sweetalert2'
@@ -19,36 +19,48 @@ export class FromComponent implements OnInit {
   submitted = false; 
   loading = false;
 
-  //items: Observable<any[]>;
+  id: string | null;
+
+
   
   constructor(private fb: FormBuilder, private authService: AuthService,
-               private router: Router,private toastr: ToastrService ) { 
-    //this.items = firestore.collection('noticias').valueChanges();
-
+               private router: Router, private aRouter: ActivatedRoute ) { 
+    
     this.crearNoticia = this.fb.group({
       titulo: ['', Validators.required],
       imagen: ['', Validators.required],
       descripcion: ['', Validators.required]
     })
+    this.id = this.aRouter.snapshot.paramMap.get('id'); 
+    console.log(this.id);
   }
 
-  agregarNoticia(){
+  ngOnInit(): void {
+    this.esEdit();
+  }
+
+  agregarEditarNoticia(){
     this.submitted = true;
 
     if(this.crearNoticia.invalid){
       return;
     }
 
+    if(this.id === null){
+      this.agregarNoticia();
+    }else{
+      this.editarNoticia(this.id);
+    }
+  }  
+
+  agregarNoticia(){
     const valores: any = {
       titulo: this.crearNoticia.value.titulo,
       imagen: this.crearNoticia.value.imagen,
       descripcion: this.crearNoticia.value.descripcion,
       fechacreacion: new Date(),
     }
-    
     this.loading = true;
-    
-
     this.authService.agregarNoticias(valores).then(() => {
      Swal.fire(
         'Se a guardado con exito!',
@@ -61,9 +73,36 @@ export class FromComponent implements OnInit {
       
       console.log('Esto es un error');
     })
-  }   
 
-  ngOnInit(): void {
   }
 
+  editarNoticia(id: string){
+
+    const valores: any = {
+      titulo: this.crearNoticia.value.titulo,
+      imagen: this.crearNoticia.value.imagen,
+      descripcion: this.crearNoticia.value.descripcion,
+    }
+
+    this.loading = true;
+    this.authService.actualizarNoticia(id, valores).then(()=>{
+      this.loading = false;
+      console.log('GUARDAO CON EXITO!!!!');
+    });
+     this.router.navigate(['/inicio']); 
+  }
+
+  esEdit(){
+    if(this.id !== null){
+      this.loading = true;  
+      this.authService.getNoticia(this.id).subscribe(data =>{
+        this.loading = false;
+        this.crearNoticia.setValue({
+          titulo: data.payload.data()['titulo'],
+          imagen: data.payload.data()['imagen'],
+          descripcion: data.payload.data()['descripcion'],
+        })
+      })
+    }
+  }
 }

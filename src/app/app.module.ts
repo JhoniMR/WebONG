@@ -12,11 +12,11 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
 
 
-
-
-
+import { environment } from 'environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,9 +34,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule, 
-   
-
-    
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

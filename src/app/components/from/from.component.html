@@ -12,7 +12,7 @@
                         <div class="alerta-campos">
                             <span *ngIf="submitted && crearNoticia.invalid" class="badge badge-danger"> TODOS LOS CAMPOS SON OBLIGATORIOS</span>
                         </div>
-                        <form [formGroup]="crearNoticia" (ngSubmit)="agregarNoticia()" class="contact-form">
+                        <form [formGroup]="crearNoticia" (ngSubmit)="agregarEditarNoticia()" class="contact-form">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Titulo</label>

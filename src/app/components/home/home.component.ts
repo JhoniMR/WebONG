@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/data/auth.service';
-import { element } from 'protractor';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     this.getMostrar();
   }
 
+  /* RECORRE LA BASE DE DATOS DE FIREBASE Y ME TRAE LA INF Y SU ID*/   
   getMostrar(){
     this.authService.getNoticias().subscribe(data =>{
       this.informacion = [];
@@ -30,4 +31,32 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  eliminarNoticia(id: string){
+    this.authService.eliminarNoticia(id).then(() =>{
+    }).catch(error =>{
+      console.log('Este es el ERROR ->',error);
+    })
+  }
+
+  preguntaEliminar(id: string){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.eliminarNoticia(id);
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success',
+        )
+      }
+    })
+  }
+  
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { AuthService } from 'app/data/auth.service';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-navbar',
@@ -7,23 +10,39 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+
+    public user$: Observable<any> = this.authService.afAuth.user;
+
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(public location: Location, private element : ElementRef) {
+    constructor(public location: Location, private element : ElementRef,
+        private authService: AuthService,  private router: Router) {
         this.sidebarVisible = false;
     }
+    
+    ngOnInit() {   
+       const navbar: HTMLElement = this.element.nativeElement;
+       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+   }
 
-    ngOnInit() {
-        const navbar: HTMLElement = this.element.nativeElement;
-        this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+   /* onLogout FUNCION DE SALIRME DEL LOGIN */
+  
+    onLogout(){
+        try {
+            this.authService.logout();
+        } catch (error) {
+            console.log('este es el erro de onLOGOUT', error);
+        }
     }
+
+    /* CODIGO DE LA PLANTILLA DESCARGADA */
+
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const html = document.getElementsByTagName('html')[0];
         // console.log(html);
         // console.log(toggleButton, 'toggle');
-
         setTimeout(function(){
             toggleButton.classList.add('toggled');
         }, 500);

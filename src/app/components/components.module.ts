@@ -16,13 +16,16 @@ import { NgbdModalComponent } from './modal/modal.component';
 import { NgbdModalContent } from './modal/modal.component';
 
 /*MODULOS*/
-import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+
 
 /*ESTILOS - ANGULAR*/
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+
+
 
 /*PAGUINAS*/
 import { HomeComponent } from './home/home.component';
@@ -42,8 +45,8 @@ import { environment } from 'environments/environment';
         AngularFireModule.initializeApp(environment.firebase),
         AngularFirestoreModule, 
         ReactiveFormsModule,
-        ToastrModule.forRoot(), // ToastrModule added 
         BrowserAnimationsModule,
+        AngularFireAuthModule,
     ],
     declarations: [
         ComponentsComponent,
@@ -56,7 +59,8 @@ import { environment } from 'environments/environment';
         NgbdModalContent,
         HomeComponent,
         FromComponent,
-        LoginComponent
+        LoginComponent,
+        
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]

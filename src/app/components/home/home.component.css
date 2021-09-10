@@ -7,10 +7,19 @@
         padding: 20px;
     }
     
-    .titulo-noticia{
-        margin-top: -30px;
-    }
+   
     
     .contenido-text{
         margin-top: 10px;
+    }
+
+    .iconos {
+        /* margin-left: auto; */
+        text-align: end;
+        margin-top: -48px;
+    }
+
+    img.editar {
+        /* margin: 16px; */
+        padding: 10px;
     }

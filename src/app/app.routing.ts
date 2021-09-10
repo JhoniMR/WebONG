@@ -13,13 +13,16 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 import { HomeComponent } from '../app/components/home/home.component';
 import { FromComponent } from '../app/components/from/from.component';
 import { LoginComponent } from '../app/components/login/login.component';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+
 
 const routes: Routes =[
     { path: '', redirectTo: 'from', pathMatch: 'full' },
 
-    { path: 'inicio',             component: HomeComponent },
-    { path: 'from',               component: FromComponent },
-    { path: 'login',              component: LoginComponent },
+    { path: 'inicio',             component: HomeComponent},
+    { path: 'from',               component: FromComponent,  canActivate:[AngularFireAuthGuard]   },
+    { path: 'editFrom/:id',       component: FromComponent,  canActivate:[AngularFireAuthGuard]   },
+    { path: 'login',              component: LoginComponent},
 
     
     { path: 'home',             component: ComponentsComponent },

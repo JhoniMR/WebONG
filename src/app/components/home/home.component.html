@@ -171,7 +171,7 @@
  <div class="formato1">
     <div class="row">
        <div class="col-md-4 mr-auto ml-auto">
-        <video src="https://www.youtube.com/watch?v=SRNmSeUqB0o&ab_channel=Emprinnos"></video>
+       
           <img [src]="item.imagen" class="img-rounded img-responsive" alt="Rounded Image">
          <div class="img-details">
              <div class="author">
@@ -180,13 +180,18 @@
          </div>
        </div>
        <div  class="col-md-7 mr-auto ml-auto">
-          <div class="titulo-noticia">
-             <h1>{{item.titulo}}</h1>
+          <div  class="titulo-noticia">
+             <h1 style="text-align: justify;">{{item.titulo}}</h1>
           </div>
           <div class="contenido-text">
             <p style="text-align: justify;">{{item.descripcion}}</p>
           </div>
           <a class="btn btn-primary" href="#!">Call to Action!</a>
+          <div class="iconos">
+                <a [routerLink]="[ '/editFrom', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
+                <a (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>
+         </div>
+            
        </div>
      </div>
    </div>
@@ -194,7 +199,7 @@
 
    <br><br><br>
    
-     <!--OTRO FORMATO-->
+     <!--OTRO FORMATO
      <div class="contend-formato">
         <div class="formato1">
            <div class="row">
@@ -225,4 +230,4 @@
              </div>
             </div>
           </div>
-       </div> 
+       </div> -->
