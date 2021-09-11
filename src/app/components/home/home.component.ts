@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/data/auth.service';
+import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,10 +10,11 @@ import Swal from 'sweetalert2';
 })
 export class HomeComponent implements OnInit {
 
+  public user$: Observable<any> = this.authService.afAuth.user;
+
   informacion: any[] = [];
 
   constructor(private authService: AuthService) { }
-
   ngOnInit(): void {
     this.getMostrar();
   }
