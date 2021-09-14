@@ -22,23 +22,24 @@
                         <p class="d-lg-none">Instagram</p>
                     </a>
                 </li>
-
                 <li class="nav-item">    
-                    <a href="/inicio" class="nav-link"><i class=""></i>Inicio</a>
+                    <a href="/#/home" class="nav-link"><i></i>Inicio</a>
                 </li>
                 <li class="nav-item">    
-                    <a href="/from" class="nav-link"><i class=""></i>Sobre Nosotros</a>
+                    <a href="/#/services" class="nav-link"><i class=""></i>Servicios</a>
                 </li>
                 <li class="nav-item">    
-                    <a href="/" class="nav-link"><i class=""></i>Servicios</a>
+                    <a href="/#/about-us" class="nav-link"><i></i>Sobre Nosotros</a>
                 </li>
-                <li class="nav-item">    
+                
+              <!-- <li class="nav-item">    
                     <a href="/" class="nav-link"><i class=""></i>Contactanos</a>
-                </li>
+                </li> -->
+                <a class="btn-mas" href="/#/from-volunteers"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li> Quiero ser parte</button></a>    
               <div *ngIf="user$ | async as user">
                   <li class="nav-item" *ngIf="user">
                       <div ngbDropdown >
-                          <a class="nav-link" class="nav-link nc-icon nc-single-02"  ngbDropdownToggle> Admin</a>
+                          <a class="nav-link" style="color: #6d6b6a;" class="nav-link nc-icon nc-single-02"  ngbDropdownToggle> Admin</a>
                           <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
                               <a class="dropdown-item">{{user?.email}}</a>
                               <a class="dropdown-item">Another Action</a>
@@ -47,9 +48,8 @@
                       </div>
                   </li>
               </div>  
-                
-                
             </ul>
-        </div>
+        </div> 
     </div>
 </nav>
+ 

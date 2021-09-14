@@ -12,16 +12,26 @@ export class HomeComponent implements OnInit {
 
   public user$: Observable<any> = this.authService.afAuth.user;
 
+  public noMostrar: any;
+  public isLogged = false;
+
   informacion: any[] = [];
 
   constructor(private authService: AuthService) { }
   ngOnInit(): void {
-    this.getMostrar();
+    //console.log(this.informacion.map.call.fechacreacion)
+
+    if(this.noMostrar){
+      this.isLogged = true;
   }
+    this.getMostrar(this.path);
+  }
+  private  path ='noticias';
 
   /* RECORRE LA BASE DE DATOS DE FIREBASE Y ME TRAE LA INF Y SU ID*/   
-  getMostrar(){
-    this.authService.getNoticias().subscribe(data =>{
+  getMostrar( path: string){
+    
+    this.authService.getNoticias(this.path).subscribe(data =>{
       this.informacion = [];
         data.forEach((element:any) =>{
           this.informacion.push({
@@ -33,8 +43,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  eliminarNoticia(id: string){
-    this.authService.eliminarNoticia(id).then(() =>{
+  eliminarNoticia(id: string, path: string){
+    this.authService.eliminarNoticia(id, this.path).then(() =>{
     }).catch(error =>{
       console.log('Este es el ERROR ->',error);
     })
@@ -42,19 +52,19 @@ export class HomeComponent implements OnInit {
 
   preguntaEliminar(id: string){
     Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: '¿Estas seguro de eliminarlo?',
+      text: "¡No podrás revertir esto!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Eliminar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.eliminarNoticia(id);
+        this.eliminarNoticia(id,this.path);
         Swal.fire(
           'Deleted!',
-          'Your file has been deleted.',
+          'Se a eliminado con exito!',
           'success',
         )
       }

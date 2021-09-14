@@ -1,0 +1,21 @@
+
+.btn-formulario{
+  margin: auto;
+}
+
+.page-header{
+  min-height: 150vh;
+}
+
+.logo-formulario {
+  text-align: center;
+}
+
+.section.landing-section {
+  border-radius: 20px;
+  margin-top: -100px;
+  height: 600px;
+}
+
+
+

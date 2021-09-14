@@ -1,0 +1,269 @@
+
+<div class="main">
+    <div class="section text-center">
+      <div class="row">
+    <div class="card" style="width: 60rem; margin: auto; margin-top: 90px; ">
+        <div class="card-body">
+          <div class="logo-formulario">
+            <img  src="../../../assets/logo/logo_negro.png" width="30%"  alt="">
+          </div>
+
+            <div class="alerta-campos">
+                <span *ngIf="submitted && registroFrom.invalid" class="badge badge-danger"> TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+            </div>
+
+        <form class="formulario" [formGroup]="registroFrom" (ngSubmit)="agregarEditarNoticia()">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <label>Nombres</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="nombres" type="text" class="form-control" placeholder="Ingrese nombres" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Apellidos</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="apellidos" type="text" class="form-control" placeholder="Ingrese Apellidos" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label>Ingre Su Correo</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="correo" type="text" class="form-control" placeholder="Ingrese Su Correo" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Tipo De Documento</label>
+                                 <select formControlName ="tipodocumento" class="form-control" id="exampleFormControlSelect1">
+                                    <option>Cedula de ciudadania</option>
+                                    <option>Tarjata de extrangeria</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label>Ingre Numero De Documento</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="numerodocumento" type="number" class="form-control" placeholder="Ingrese documento" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Ingre Lugar De Expedicion</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="lugardeexpedicion" type="text" class="form-control" placeholder="Ingrese lugar" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <label>Ingre Lugar De Nacimiento</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="lugarnacimiento" type="text" class="form-control" placeholder="Ingrese lugar" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <label>Fecha De Nacimiento</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="fechanacimiento" type="date" class="form-control" placeholder="Ingrese Fecha" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Sexo</label>
+                                 <select formControlName ="sexo" class="form-control" id="exampleFormControlSelect1">
+                                    <option>Masculino</option>
+                                    <option>Femenino</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Direcccion</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="direccion" type="text" class="form-control" placeholder="Ingrese la dirreción" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Departamento</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="departamento" type="text" class="form-control" placeholder="Ingrese la Departamento" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Ciudad</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="ciudad" type="text" class="form-control" placeholder="Ingrese la ciudad" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Telefono Fijo</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="telefonofijo" type="number" class="form-control" placeholder="Ingrese el telefono fijo" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Numero Telefonico</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="numerocelular" type="number" class="form-control" placeholder="Ingrese el telefono fijo" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Población</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="poblacion" type="text" class="form-control" placeholder="Ingrese la poblacion" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>EPS</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="eps" type="text" class="form-control" placeholder="Ingrese su EPS" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Regimen</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="regimen" type="text" class="form-control" placeholder="Ingrese su Regimen" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Cual Es Profesion</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="profesion" type="text" class="form-control" placeholder="Ingrese su profesion" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Area voluntaria</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="areavoluntaria" type="text" class="form-control" placeholder="En que desea apoyar" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">¿Tine Pasaporte?</label>
+                                 <select formControlName ="pasaporte" class="form-control" id="exampleFormControlSelect1">
+                                    <option>SI</option>
+                                    <option>NO</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">RH</label>
+                                 <select formControlName ="rh" class="form-control" id="exampleFormControlSelect1">
+                                    <option>A</option>
+                                    <option>B</option>
+                                    <option>B+</option>
+                                    <option>O+</option>
+                                    <option>AB+</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Puntuación</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="puntuación" type="number" class="form-control" placeholder="Ingrese su puntuación" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-md-4">
+                        <label>Teneren cuenta</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="tenerencuenta" type="text" class="form-control" placeholder="No se cuentanos algo sobre vos" (focus)="focus1=true" (blur)="focus1=false" >
+                        </div>
+                    </div>
+    
+                </div> 
+                
+                <div class="row">        
+                    <div class="btn-formulario">
+                          <button type="submit" class="btn btn-primary btn-lg btn-fill" >
+                              Agregar Reporte
+                                <div *ngIf="loading" class="spinner-border float" role="status">
+                                    <span class="sr-only">Cargando ...</span>    
+                                </div>
+                            </button>
+                    </div>  
+                </div>
+        </form>
+        </div>
+    </div>
+        </div>
+  </div> 
+</div>

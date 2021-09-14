@@ -27,11 +27,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
+
 /*PAGUINAS*/
 import { HomeComponent } from './home/home.component';
-import { FromComponent } from './from/from.component';
+
 import { LoginComponent } from './login/login.component';
 import { environment } from 'environments/environment';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ServicesComponent } from './services/services.component';
+import { FromHomeComponent } from './froms/from-home/from-home.component';
+import { FromVolunteersComponent } from './froms/from-volunteers/from-volunteers.component';
+
 
 @NgModule({
     imports: [
@@ -47,6 +53,7 @@ import { environment } from 'environments/environment';
         ReactiveFormsModule,
         BrowserAnimationsModule,
         AngularFireAuthModule,
+      
     ],
     declarations: [
         ComponentsComponent,
@@ -58,8 +65,13 @@ import { environment } from 'environments/environment';
         NgbdModalComponent,
         NgbdModalContent,
         HomeComponent,
-        FromComponent,
+ 
         LoginComponent,
+        AboutUsComponent,
+        ServicesComponent,
+        FromHomeComponent,
+        FromVolunteersComponent,
+ 
         
     ],
     entryComponents: [NgbdModalContent],
