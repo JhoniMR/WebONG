@@ -32,6 +32,10 @@ import { HomeComponent } from './home/home.component';
 import { FromComponent } from './from/from.component';
 import { LoginComponent } from './login/login.component';
 import { environment } from 'environments/environment';
+import { OngComponent } from './slider/ong/ong.component';
+import { EjesComponent } from './slider/ejes/ejes.component';
+import { ActividadesComponent } from './slider/actividades/actividades.component';
+import { BeneficiosComponent } from './slider/beneficios/beneficios.component';
 
 @NgModule({
     imports: [
@@ -60,6 +64,10 @@ import { environment } from 'environments/environment';
         HomeComponent,
         FromComponent,
         LoginComponent,
+        OngComponent,
+        EjesComponent,
+        ActividadesComponent,
+        BeneficiosComponent,
         
     ],
     entryComponents: [NgbdModalContent],
