@@ -12,16 +12,23 @@ import { Observable } from 'rxjs';
 export class NavbarComponent implements OnInit {
 
     public user$: Observable<any> = this.authService.afAuth.user;
+    public isLogged = false;
 
     private toggleButton: any;
     private sidebarVisible: boolean;
 
     constructor(public location: Location, private element : ElementRef,
         private authService: AuthService,  private router: Router) {
-        this.sidebarVisible = false;
+        this.sidebarVisible = true;
     }
     
     ngOnInit() {   
+        if(this.user$){
+            this.isLogged == true;
+        }else{
+            this.isLogged == false;
+        }
+      
        const navbar: HTMLElement = this.element.nativeElement;
        this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
    }

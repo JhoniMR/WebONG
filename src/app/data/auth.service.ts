@@ -15,26 +15,26 @@ export class AuthService {
               private router: Router) { }
 
   /* CRUD - NOTICIAS EN FIREBASE */            
-  agregarNoticias(valores: any): Promise<any>{
-  return this.firestore.collection('noticias').add(valores);
+  agregarNoticias(valores: any, path: string): Promise<any>{
+  return this.firestore.collection(path).add(valores);
   }
 
   /* CRUD - MOSTRAR LAS NOTICIAS DESDE FIREBASE*/   
-  getNoticias(): Observable<any>{
-    return this.firestore.collection('noticias').snapshotChanges();
+  getNoticias( path: string): Observable<any>{
+    return this.firestore.collection(path, ref =>ref.orderBy('fechacreacion', 'desc').limit(15)).snapshotChanges();
   }
 
   /*ELIMINAR EMPLEADO*/
-  eliminarNoticia(id: string): Promise<any>{
-    return this.firestore.collection('noticias').doc(id).delete();
+  eliminarNoticia(id: string, path: string): Promise<any>{
+    return this.firestore.collection(path).doc(id).delete();
   }
 
-  getNoticia(id: string): Observable<any>{
-    return this.firestore.collection('noticias').doc(id).snapshotChanges();
+  getNoticia(id: string, path: string): Observable<any>{
+    return this.firestore.collection(path).doc(id).snapshotChanges();
   }
 
-  actualizarNoticia(id: string, data: any): Promise<any>{
-    return this.firestore.collection('noticias').doc(id).update(data);
+  actualizarNoticia(path: string, id: string, data: any): Promise<any>{
+    return this.firestore.collection(path).doc(id).update(data);
   }
 
  

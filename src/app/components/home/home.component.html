@@ -1,3 +1,5 @@
+
+
 <div class="wrapper">
     <div class="page-header section-dark" style="background-image: url('assets/img/antoine-barres.jpg')">
         <div class="filter"></div>
@@ -183,28 +185,47 @@
           <div  class="titulo-noticia">
              <h1 style="text-align: justify;">{{item.titulo}}</h1>
           </div>
+          <div  class="fehaDecreacion">
+           <!-- <h1 style="text-align: justify;">{{item.fechacreacion}}</h1> -->
+         </div>
           <div class="contenido-text">
             <p style="text-align: justify;">{{item.descripcion}}</p>
           </div>
           <a class="btn btn-primary" href="#!">Call to Action!</a>
 
-          <div class="iconos" *ngIf="user$ | async as user; else login">
+          <div class="iconos" *ngIf="user$ | async as user; else botones">
                 <a  [routerLink]="[ '/editFrom', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
                 <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>
          </div>
 
-         <ng-template #login>
+         <ng-template #botones>
             <a *ngIf="user" [routerLink]="[ '/editFrom', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
             <a *ngIf="user"  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>
-         </ng-template>
-         
-            
+         </ng-template> 
        </div>
      </div>
    </div>
 </div> 
 
-   <br><br><br>
+    <div class="btn-fromHome" *ngIf="user$ | async as user; else home">    
+         <a class="btn-mas" href="/#/from-home"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+   </div>
+   
+    <ng-template #home>
+        <a *ngIf="user" class="btn-mas" href="/#/from-home"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+    </ng-template>
+
+   
+
+
+  
+
+
+
+    
+
+
+   <br><br><br>  <br><br><br>
    
      <!--OTRO FORMATO
      <div class="contend-formato">

@@ -1,39 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-//import { AngularFirestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'app/data/auth.service';
-
-
-//import { Observable } from 'rxjs';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-from',
-  templateUrl: './from.component.html',
-  styleUrls: ['./from.component.css']
+  selector: 'app-from-home',
+  templateUrl: './from-home.component.html',
+  styleUrls: ['./from-home.component.css']
 })
-export class FromComponent implements OnInit {
+export class FromHomeComponent implements OnInit {
 
   crearNoticia: FormGroup;
-  submitted = false; 
-  loading = false;
-
   id: string | null;
 
+  submitted = false; 
+  loading = false;
+ 
 
-  
   constructor(private fb: FormBuilder, private authService: AuthService,
-               private router: Router, private aRouter: ActivatedRoute ) { 
-    
-    this.crearNoticia = this.fb.group({
-      titulo: ['', Validators.required],
-      imagen: ['', Validators.required],
-      descripcion: ['', Validators.required]
-    })
-    this.id = this.aRouter.snapshot.paramMap.get('id'); 
-    console.log(this.id);
-  }
+    private router: Router, private aRouter: ActivatedRoute) { 
+
+      this.crearNoticia = this.fb.group({
+        titulo: ['', Validators.required],
+        imagen: ['', Validators.required],
+        descripcion: ['', Validators.required]
+      })
+      this.id = this.aRouter.snapshot.paramMap.get('id'); 
+    }
+
+    private  path ='noticias';
 
   ngOnInit(): void {
     this.esEdit();
@@ -61,13 +57,13 @@ export class FromComponent implements OnInit {
       fechacreacion: new Date(),
     }
     this.loading = true;
-    this.authService.agregarNoticias(valores).then(() => {
+    this.authService.agregarNoticias(valores, this.path).then(() => {
      Swal.fire(
         'Se a guardado con exito!',
         '',
         'success'
       )
-    this.router.navigate(['/inicio']); 
+    this.router.navigate(['/home']); 
     return;   
     }).catch(error =>{
       
@@ -85,17 +81,21 @@ export class FromComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authService.actualizarNoticia(id, valores).then(()=>{
+    this.authService.actualizarNoticia(this.path, id, valores ).then(()=>{
       this.loading = false;
-      console.log('GUARDAO CON EXITO!!!!');
+      Swal.fire(
+        'Se a guardado con exito!',
+        '',
+        'success'
+      )
     });
-     this.router.navigate(['/inicio']); 
+     this.router.navigate(['/home']); 
   }
 
   esEdit(){
     if(this.id !== null){
       this.loading = true;  
-      this.authService.getNoticia(this.id).subscribe(data =>{
+      this.authService.getNoticia(this.id, this.path).subscribe(data =>{
         this.loading = false;
         this.crearNoticia.setValue({
           titulo: data.payload.data()['titulo'],
@@ -105,4 +105,5 @@ export class FromComponent implements OnInit {
       })
     }
   }
+
 }

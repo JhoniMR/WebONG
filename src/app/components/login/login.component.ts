@@ -31,10 +31,10 @@ export class LoginComponent implements OnInit {
     try {
     const user = this.authService.login(correo, contrasena);
       if(user){
-        this.router.navigate(['/inicio']);
+        this.router.navigate(['/home']);
       }
     } catch (error) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/#/home']);
       console.log('SUCEDIO UN ERROR EN LOGIN', error)
     }
   }

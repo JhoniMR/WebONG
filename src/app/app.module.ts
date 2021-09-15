@@ -16,6 +16,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 
 
+
 import { environment } from 'environments/environment';
 
 @NgModule({
@@ -36,6 +37,7 @@ import { environment } from 'environments/environment';
     ReactiveFormsModule, 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+
   
   ],
   providers: [],
