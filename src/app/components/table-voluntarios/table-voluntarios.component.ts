@@ -11,10 +11,13 @@ import * as XLSX from 'xlsx';
 })
 export class TableVoluntariosComponent implements OnInit {
 
-  p: number = 1;
+ 
+
+  buscar: string; 
   informacion: any[] = [];  
 
   fileName= 'listaVoluntarios.xlsx';
+  paginacion: number = 1;
 
   exportexcel(): void
   {
@@ -81,6 +84,43 @@ export class TableVoluntariosComponent implements OnInit {
       }
     })
   }
-   
+
+  buscador(){
+    this.authService.getVoluntarios(this.path).subscribe(data =>{
+      this.informacion = [];
+        data.forEach((element:any) =>{
+          this.informacion.push({
+            id: element.payload.doc.id,
+            ...element.payload.doc.data()
+          })
+        });
+        console.log(this.informacion);
+        this.informacion = this.informacion.filter(data =>{
+          return data.numerodocumento.toString().trim() === this.buscar;
+        })
+
+        if(this.informacion.length === 0){
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Dato no encontrado',
+            footer: ''
+          })
+        }else{
+          Swal.fire(
+            '',
+            'Dato encontrado con exito',
+            'success'
+          )
+        }
+    });
+ 
+ }
+ 
+ 
+
+
+
+
 
 }
