@@ -49,8 +49,10 @@
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Tipo De Documento</label>
                                  <select formControlName ="tipodocumento" class="form-control" id="exampleFormControlSelect1">
-                                    <option>Cedula de ciudadania</option>
-                                    <option>Tarjata de extrangeria</option>
+                                    <option>CC</option>
+                                    <option>TI</option>
+                                    <option>CE</option>
+                                    <option>NUIP</option>
                                 </select>
                         </div>
                     </div>
@@ -114,16 +116,45 @@
                          <input formControlName ="direccion" type="text" class="form-control" placeholder="Ingrese la dirreción" (focus)="focus1=true" (blur)="focus1=false" >
                         </div>
                     </div>
-
+                    
                     <div class="col-md-4">
-                        <label>Departamento</label>
-                        <div class="input-group" >
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
-                          </div>
-                         <input formControlName ="departamento" type="text" class="form-control" placeholder="Ingrese la Departamento" (focus)="focus1=true" (blur)="focus1=false" >
-                        </div>
-                    </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Departamento</label>
+                               <select formControlName ="departamento" class="form-control" id="exampleFormControlSelect1">
+                                  <option>Amazonas</option>
+                                  <option>Antioquia</option>
+                                  <option>Arauca</option>
+                                  <option>Atlantico</option>
+                                  <option>Bogota</option>
+                                  <option>Bolivar</option>
+                                  <option>Boyaca</option>
+                                  <option>Caldas</option>
+                                  <option>Caqueta</option>
+                                  <option>Casanare</option>
+                                  <option>Cauca</option>
+                                  <option>Cesar</option>
+                                  <option>Choco</option>
+                                  <option>Cundinamarca</option>
+                                  <option>Guainia</option>
+                                  <option>Guiaviare</option>
+                                  <option>Guajira</option>
+                                  <option>Huila</option>
+                                  <option>Magdanela</option>
+                                  <option>Meta</option>
+                                  <option>Norte De Santander</option>
+                                  <option>Putumayo</option>
+                                  <option>Quidio</option>
+                                  <option>Risaraldas</option>
+                                  <option>San Andres & Providencia</option>
+                                  <option>Santander</option>
+                                  <option>Sucre</option>
+                                  <option>Tolima</option>
+                                  <option>Valle Del Cauca</option>
+                                  <option>Vaupes</option>
+                                  <option>Vichada</option>
+                              </select>
+                      </div>
+                  </div>
 
                     <div class="col-md-4">
                         <label>Ciudad</label>
@@ -132,16 +163,6 @@
                             <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
                           </div>
                          <input formControlName ="ciudad" type="text" class="form-control" placeholder="Ingrese la ciudad" (focus)="focus1=true" (blur)="focus1=false" >
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <label>Telefono Fijo</label>
-                        <div class="input-group" >
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
-                          </div>
-                         <input formControlName ="telefonofijo" type="number" class="form-control" placeholder="Ingrese el telefono fijo" (focus)="focus1=true" (blur)="focus1=false" >
                         </div>
                     </div>
 
@@ -156,14 +177,17 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label>Población</label>
-                        <div class="input-group" >
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
-                          </div>
-                         <input formControlName ="poblacion" type="text" class="form-control" placeholder="Ingrese la poblacion" (focus)="focus1=true" (blur)="focus1=false" >
-                        </div>
-                    </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Población</label>
+                               <select formControlName ="poblacion" class="form-control" id="exampleFormControlSelect1">
+                                  <option>Afro</option>
+                                  <option>LGTBI</option>
+                                  <option>Discapacidad</option>
+                                  <option>Indigena</option>
+                                  <option>Otro</option>
+                              </select>
+                      </div>
+                  </div>
 
                     <div class="col-md-4">
                         <label>EPS</label>
@@ -176,17 +200,19 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label>Regimen</label>
-                        <div class="input-group" >
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
-                          </div>
-                         <input formControlName ="regimen" type="text" class="form-control" placeholder="Ingrese su Regimen" (focus)="focus1=true" (blur)="focus1=false" >
-                        </div>
-                    </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Regimen</label>
+                               <select formControlName ="regimen" class="form-control" id="exampleFormControlSelect1">
+                                  <option>Subsidiado</option>
+                                  <option>Contributivo</option>
+                                  <option>Otro</option>
+                              </select>
+                      </div>
+                  </div>
+
 
                     <div class="col-md-4">
-                        <label>Cual Es Profesion</label>
+                        <label>Cual Es Su Profesion</label>
                         <div class="input-group" >
                           <div class="input-group-prepend">
                             <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
@@ -196,14 +222,20 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label>Area voluntaria</label>
-                        <div class="input-group" >
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
-                          </div>
-                         <input formControlName ="areavoluntaria" type="text" class="form-control" placeholder="En que desea apoyar" (focus)="focus1=true" (blur)="focus1=false" >
-                        </div>
-                    </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Area voluntaria</label>
+                               <select formControlName ="areavoluntaria" class="form-control" id="exampleFormControlSelect1">
+                                  <option>Servicios De Salud</option>
+                                  <option>Belleza</option>
+                                  <option>Recreacion</option>
+                                  <option>Proyectos Productivos</option>
+                                  <option>Veterinaria</option>
+                                  <option>Apoyo Logistico</option>
+                                  <option>Reforestación</option>
+                                  <option>Otro</option>
+                              </select>
+                      </div>
+                  </div>
 
                     <div class="col-md-2">
                         <div class="form-group">
@@ -219,35 +251,50 @@
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">RH</label>
                                  <select formControlName ="rh" class="form-control" id="exampleFormControlSelect1">
-                                    <option>A</option>
-                                    <option>B</option>
+                                    <option>A+</option>
+                                    <option>A-</option>
                                     <option>B+</option>
-                                    <option>O+</option>
+                                    <option>B-</option>  
                                     <option>AB+</option>
+                                    <option>AB-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
                                 </select>
                         </div>
                     </div>
-
-                    <div class="col-md-4">
-                        <label>Puntuación</label>
-                        <div class="input-group" >
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
-                          </div>
-                         <input formControlName ="puntuación" type="number" class="form-control" placeholder="Ingrese su puntuación" (focus)="focus1=true" (blur)="focus1=false" >
-                        </div>
+                  
+                    <div class="col-md-12" style="margin-top: 12px;">
+                      <h2  class="display-2 fw-bolder">NOTA</h2>
+                         <p style="text-align: justify; font-size: 15px;" class="lead">
+                          Por medio de la aceptación y envío  del presente formulario certifico que toda la información aquí contenida es  real, verídica y confiable; así mismo, acepto y autorizo el manejo, la administración y/o divulgación de esta a la FUNDACIÓN META VISIBLE ONG de acuerdo a la ley 1581 de 2012.
+                          De igual manera acepto que de acuerdo a la ley 1819 del 2016, entiendo que los dineros o sus equivalentes a este referente serán tenidos en cuenta como DONACIÓN por cuanto se estipula que solo podrán ser usados para el ejercicio de la función sin animo de lucro y "NO SERÁN REEMBOLSABLES". 
+                        </p>
                     </div>
+
+                    <div class="col-md-12" style="margin-top: 12px;">
+                      <h2  class="display-2 fw-bolder">OBSERVACIONES</h2>
+                         <p style="text-align: justify; font-size: 15px;" class="lead">
+                          Manifiesto NO poseer ninguna enfermedad de índole infecto contagiosa o catastrófica que pueda poner en riesgo la salud o la vida de alguien y que en caso contrario o de sospechar de llegar a adquirirla y estar en duda de poseerla me comprometo a hacerlo saber al personal directivo de la FUNDACIÓN META VISIBLE ONG con el fin de tomar medidas pertinentes y evitar su contagio ante las demás personas.
+                        </p>
+                    </div>
+
+                    <div class="col-md-12" style="margin-top: 12px;">
+                      <h2  class="display-2 fw-bolder">PARA TENER EN CUENTA</h2>
+                         <p style="text-align: justify; font-size: 15px;" class="lead">
+                          Como Voluntario FMV usted adquiere el compromiso de asistir por lo menos a 3 actividades durante el año  y a la reunión anual de Voluntarios; de NO cumplir con estos requisitos el formulario será cancelado.
+                        </p>
+                    </div>
+
+                    <div class="col-md-12" style="margin-top: 12px;">
+                      <h2  class="display-2 fw-bolder">PLAZOS</h2>
+                         <p style="text-align: justify; font-size: 15px;" class="lead">
+                          Usted cuenta con 48 horas corrientes a partir de este momento para poder realizar el pago y activar el formulario, recuerde que debe enviar el comprobante al whatsapp 3054350666 y esperar la llamada para la entrevista.
+                        </p>
+                    </div>
+
+
 
                     
-                    <div class="col-md-4">
-                        <label>Teneren cuenta</label>
-                        <div class="input-group" >
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
-                          </div>
-                         <input formControlName ="tenerencuenta" type="text" class="form-control" placeholder="No se cuentanos algo sobre vos" (focus)="focus1=true" (blur)="focus1=false" >
-                        </div>
-                    </div>
     
                 </div> 
                 

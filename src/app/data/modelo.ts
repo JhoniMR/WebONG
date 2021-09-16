@@ -1,6 +1,14 @@
-export interface Modelo {
-    descripcion: string;
-    fechacreacion: Date;
-    imagen: string;
-    titulo: string;
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
 }
+
+  export interface servicesInferce {
+    nombres: string;
+    apellidos: string;
+    cedula: string;
+  }
+
+

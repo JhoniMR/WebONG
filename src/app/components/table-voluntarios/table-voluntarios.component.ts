@@ -1,35 +1,48 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/data/auth.service';
-import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
+import * as XLSX from 'xlsx';
+
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-table-voluntarios',
+  templateUrl: './table-voluntarios.component.html',
+  styleUrls: ['./table-voluntarios.component.css']
 })
-export class HomeComponent implements OnInit {
+export class TableVoluntariosComponent implements OnInit {
 
-  public user$: Observable<any> = this.authService.afAuth.user;
+  p: number = 1;
+  informacion: any[] = [];  
 
-  public noMostrar: any;
-  public isLogged = false;
+  fileName= 'listaVoluntarios.xlsx';
 
-  informacion: any[] = [];
+  exportexcel(): void
+  {
+    /* pass here the table id */
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    /* save to file */  
+    XLSX.writeFile(wb, this.fileName);
 
-  constructor(private authService: AuthService) { }
+  }
+  
+ 
+  constructor(private authService: AuthService) {  }
+
+  
   ngOnInit(): void {
-    if(this.noMostrar){
-      this.isLogged = true;
+    this.getMostrar(this.path)
   }
-    this.getMostrar(this.path);
-  }
-  private  path ='noticias';
 
-  /* RECORRE LA BASE DE DATOS DE FIREBASE Y ME TRAE LA INF Y SU ID*/   
+  private path ='voluntarios';
+
   getMostrar( path: string){
-    
-    this.authService.getNoticias(this.path).subscribe(data =>{
+    this.authService.getVoluntarios(this.path).subscribe(data =>{
       this.informacion = [];
         data.forEach((element:any) =>{
           this.informacion.push({
@@ -68,5 +81,6 @@ export class HomeComponent implements OnInit {
       }
     })
   }
-  
+   
+
 }

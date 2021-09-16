@@ -14,7 +14,10 @@ import { ExamplesModule } from './examples/examples.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
+import { DataTablesModule } from "angular-datatables";
+import {MatTableModule} from '@angular/material/table';
 
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 
 import { environment } from 'environments/environment';
@@ -37,6 +40,9 @@ import { environment } from 'environments/environment';
     ReactiveFormsModule, 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    DataTablesModule,
+    MatTableModule,
+    NgxPaginationModule,
 
   
   ],
