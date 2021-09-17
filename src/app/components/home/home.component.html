@@ -198,7 +198,7 @@
             <p style="text-align: justify;">{{item.descripcion}}</p>
           </div>
          
-            <a class="btn btn-primary"  href="{{item.video}}">VER VIDEO DE YOUTUBE</a>
+            <a class="btn btn-primary"  href="{{item.video}}">VER VIDEO</a>
         
           <div class="iconos" *ngIf="user$ | async as user; else botones">
                 <a  [routerLink]="[ '/editFrom', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
