@@ -29,6 +29,7 @@
     "@angular/platform-browser": "11.0.4",
     "@angular/platform-browser-dynamic": "11.0.4",
     "@angular/router": "11.0.4",
+    "@angular/youtube-player": "^12.2.6",
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
     "angular-datatables": "^12.0.0",
     "bootstrap": "4.5.3",

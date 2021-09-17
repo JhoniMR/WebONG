@@ -10,6 +10,12 @@
         </div>
         <div class="navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav ml-auto">
+                 <li class="nav-item" *ngIf="!isDocumentation()">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/metavisible" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                        <p class="d-lg-none">Twitter</p>
+                    </a>
+                </li> 
                 <li class="nav-item" *ngIf="!isDocumentation()">
                     <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/metavisible" target="_blank">
                         <i class="fa fa-facebook-square"></i>
@@ -38,7 +44,7 @@
                 <a class="btn-mas" href="/#/from-volunteers"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li> Quiero ser parte</button></a>    
               <div *ngIf="user$ | async as user">
                   <li class="nav-item" *ngIf="user">
-                      <div ngbDropdown >
+                      <div ngbDropdown  >
                           <a class="nav-link" style="color: #6d6b6a;" class="nav-link nc-icon nc-single-02"  ngbDropdownToggle> Admin</a>
                           <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
                               <a class="dropdown-item">{{user?.email}}</a>
@@ -47,7 +53,7 @@
                           </div>
                       </div>
                   </li>
-              </div>  
+              </div> 
             </ul>
         </div> 
     </div>

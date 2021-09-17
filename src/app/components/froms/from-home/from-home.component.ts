@@ -24,6 +24,7 @@ export class FromHomeComponent implements OnInit {
       this.crearNoticia = this.fb.group({
         titulo: ['', Validators.required],
         imagen: ['', Validators.required],
+        video: ['', Validators.required],
         descripcion: ['', Validators.required]
       })
       this.id = this.aRouter.snapshot.paramMap.get('id'); 
@@ -36,11 +37,7 @@ export class FromHomeComponent implements OnInit {
   }
 
   agregarEditarNoticia(){
-    this.submitted = true;
-
-    if(this.crearNoticia.invalid){
-      return;
-    }
+   
 
     if(this.id === null){
       this.agregarNoticia();
@@ -54,6 +51,7 @@ export class FromHomeComponent implements OnInit {
       titulo: this.crearNoticia.value.titulo,
       imagen: this.crearNoticia.value.imagen,
       descripcion: this.crearNoticia.value.descripcion,
+      video: this.crearNoticia.value.video,
       fechacreacion: new Date(),
     }
     this.loading = true;
@@ -77,6 +75,7 @@ export class FromHomeComponent implements OnInit {
     const valores: any = {
       titulo: this.crearNoticia.value.titulo,
       imagen: this.crearNoticia.value.imagen,
+      video: this.crearNoticia.value.video,
       descripcion: this.crearNoticia.value.descripcion,
     }
 
@@ -100,6 +99,7 @@ export class FromHomeComponent implements OnInit {
         this.crearNoticia.setValue({
           titulo: data.payload.data()['titulo'],
           imagen: data.payload.data()['imagen'],
+          video: data.payload.data()['video'],
           descripcion: data.payload.data()['descripcion'],
         })
       })

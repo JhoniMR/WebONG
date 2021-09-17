@@ -1,5 +1,3 @@
-
-
 <div class="wrapper">
     <div class="page-header section-dark" style="background-image: url('assets/img/antoine-barres.jpg')">
         <div class="filter"></div>
@@ -173,12 +171,21 @@
  <div class="formato1">
     <div class="row">
        <div class="col-md-4 mr-auto ml-auto">
-       
-          <img [src]="item.imagen" class="img-rounded img-responsive" alt="Rounded Image">
+
+          <div>
+            <img *ngIf="isLogged" [src]="item.imagen" class="img-rounded img-responsive" alt="Rounded Image">
+        </div>
+          
+      <!-- <div class="video-box">
+               <div class="video-container">
+                <youtube-player  [videoId]="item.video" ></youtube-player>
+               </div>
+           </div>-->
+
          <div class="img-details">
-             <div class="author">
+            <!-- <div class="author">
                  <img src="assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-             </div>
+             </div> -->
          </div>
        </div>
        <div  class="col-md-7 mr-auto ml-auto">
@@ -186,16 +193,16 @@
              <h1 style="text-align: justify;">{{item.titulo}}</h1>
           </div>
           <div  class="fehaDecreacion">
-           <!-- <h1 style="text-align: justify;">{{item.fechacreacion}}</h1> -->
          </div>
           <div class="contenido-text">
             <p style="text-align: justify;">{{item.descripcion}}</p>
           </div>
-          <a class="btn btn-primary" href="#!">Call to Action!</a>
-
+         
+            <a class="btn btn-primary"  href="{{item.video}}">VER VIDEO DE YOUTUBE</a>
+        
           <div class="iconos" *ngIf="user$ | async as user; else botones">
                 <a  [routerLink]="[ '/editFrom', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
-                <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>
+                <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>  
          </div>
 
          <ng-template #botones>
@@ -222,10 +229,7 @@
     </ng-template>
 
    
-
-
-  
-
+    
 
 
     
@@ -233,35 +237,3 @@
 
    <br><br><br>  <br><br><br>
    
-     <!--OTRO FORMATO
-     <div class="contend-formato">
-        <div class="formato1">
-           <div class="row">
-              <div  class="col-md-7 mr-auto ml-auto">
-                 <div class="titulo-noticia">
-                    <h1>Business Name or Tagline</h1>
-                 </div>
-                 <div class="contenido-text">
-                   <p style="text-align: justify;">This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                       This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                       This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                       This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                       This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                       This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                       This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                       This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                       This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-                 </div>
-                 <a class="btn btn-primary" href="#!">Call to Action!</a>
-              </div>
-              <div class="col-md-4 mr-auto ml-auto">
-                <img src="assets/img/uriel-soberanes.jpg" class="img-rounded img-responsive" alt="Rounded Image">
-               <div class="img-details">
-                   <div class="author">
-                       <img src="assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                   </div>
-               </div>
-             </div>
-            </div>
-          </div>
-       </div> -->

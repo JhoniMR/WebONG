@@ -43,6 +43,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import {NgxPaginationModule} from 'ngx-pagination';
 
+import { YouTubePlayerModule } from "@angular/youtube-player";
+
 @NgModule({
     imports: [
         CommonModule,
@@ -62,6 +64,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
         MatButtonModule,
         MatTableExporterModule,
         NgxPaginationModule,
+        YouTubePlayerModule,
 
       
     ],

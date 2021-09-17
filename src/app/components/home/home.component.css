@@ -28,7 +28,6 @@ img.editar {
     
 }
 
-
 .btn-fromHome {
     position: flex;
     position: fixed;
@@ -42,3 +41,19 @@ button.btn.btn-success.btn-round {
     margin-top: -24px;
     margin-left: -45px;
 }
+
+
+img.img-rounded.img-responsive {
+    color: white;   
+}
+
+/*
+.video-container {
+    height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	
+	position: relative;
+}
+.video-box{ }*/
+

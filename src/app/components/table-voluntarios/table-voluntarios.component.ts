@@ -11,8 +11,6 @@ import * as XLSX from 'xlsx';
 })
 export class TableVoluntariosComponent implements OnInit {
 
- 
-
   buscar: string; 
   informacion: any[] = [];  
 
@@ -37,7 +35,6 @@ export class TableVoluntariosComponent implements OnInit {
  
   constructor(private authService: AuthService) {  }
 
-  
   ngOnInit(): void {
     this.getMostrar(this.path)
   }
@@ -114,13 +111,7 @@ export class TableVoluntariosComponent implements OnInit {
           )
         }
     });
- 
  }
  
- 
-
-
-
-
 
 }

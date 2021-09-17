@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { AuthService } from 'app/data/auth.service';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
@@ -10,6 +11,9 @@ import Swal from 'sweetalert2';
 })
 export class HomeComponent implements OnInit {
 
+
+  safeUrl: string ;
+
   public user$: Observable<any> = this.authService.afAuth.user;
 
   public noMostrar: any;
@@ -17,18 +21,19 @@ export class HomeComponent implements OnInit {
 
   informacion: any[] = [];
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private santizer: DomSanitizer) { }
   ngOnInit(): void {
-    if(this.noMostrar){
-      this.isLogged = true;
-  }
+    const tag = document.createElement('script');
+  	tag.src = "https://www.youtube.com/iframe_api";
+  	document.body.appendChild(tag);
     this.getMostrar(this.path);
+
+    
   }
   private  path ='noticias';
 
   /* RECORRE LA BASE DE DATOS DE FIREBASE Y ME TRAE LA INF Y SU ID*/   
   getMostrar( path: string){
-    
     this.authService.getNoticias(this.path).subscribe(data =>{
       this.informacion = [];
         data.forEach((element:any) =>{
@@ -37,6 +42,14 @@ export class HomeComponent implements OnInit {
             ...element.payload.doc.data()
           })
         });
+
+        if(this.informacion === null){
+          this.isLogged = false;
+          return
+        }else{
+          this.isLogged = true;
+          return
+        }
         console.log(this.informacion);
     });
   }
