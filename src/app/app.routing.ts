@@ -13,6 +13,13 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 /*PAGUINAS*/
 import { HomeComponent } from '../app/components/home/home.component';
 import { LoginComponent } from '../app/components/login/login.component';
+
+import { OngComponent } from '../app/components/slider/ong/ong.component';
+import { EjesComponent } from '../app/components/slider/ejes/ejes.component';
+import { ActividadesComponent } from '../app/components/slider/actividades/actividades.component';
+import { BeneficiosComponent } from '../app/components/slider/beneficios/beneficios.component';
+
+
 import { AboutUsComponent } from '../app/components/about-us/about-us.component';
 import { ServicesComponent } from '../app/components/services/services.component';
 
@@ -20,10 +27,22 @@ import { FromHomeComponent } from '../app/components/froms/from-home/from-home.c
 import { FromVolunteersComponent } from '../app/components/froms/from-volunteers/from-volunteers.component';
 import { TableVoluntariosComponent } from '../app/components/table-voluntarios/table-voluntarios.component';
 
+
+
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
 
+
+    { path: 'inicio',             component: HomeComponent},
+    
+    { path: 'login',              component: LoginComponent},
+    { path: 'ong',                component: OngComponent},
+    { path: 'ejes',               component: EjesComponent},
+    { path: 'actividades',        component: ActividadesComponent},
+    { path: 'beneficios',         component: BeneficiosComponent},
+
     { path: 'home',             component: HomeComponent},
+
 
     
     { path: 'from-home',        component: FromHomeComponent, canActivate:[AngularFireAuthGuard]},

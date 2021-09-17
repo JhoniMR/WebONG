@@ -34,6 +34,12 @@ import {MatTableModule} from '@angular/material/table';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { environment } from 'environments/environment';
+
+import { OngComponent } from './slider/ong/ong.component';
+import { EjesComponent } from './slider/ejes/ejes.component';
+import { ActividadesComponent } from './slider/actividades/actividades.component';
+import { BeneficiosComponent } from './slider/beneficios/beneficios.component';
+
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ServicesComponent } from './services/services.component';
 import { FromHomeComponent } from './froms/from-home/from-home.component';
@@ -42,6 +48,7 @@ import { TableVoluntariosComponent } from './table-voluntarios/table-voluntarios
 import {MatButtonModule} from '@angular/material/button';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { PruebaComponent } from './slider/prueba/prueba.component';
 
 import { YouTubePlayerModule } from "@angular/youtube-player";
 
@@ -79,12 +86,18 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
         NgbdModalContent,
         HomeComponent,
         LoginComponent,
+        OngComponent,
+        EjesComponent,
+        ActividadesComponent,
+        BeneficiosComponent,
         AboutUsComponent,
         ServicesComponent,
         FromHomeComponent,
         FromVolunteersComponent,
         TableVoluntariosComponent,
+        
  
+
         
     ],
     entryComponents: [NgbdModalContent],
