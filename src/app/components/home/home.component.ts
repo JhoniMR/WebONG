@@ -19,8 +19,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
   ngOnInit(): void {
-    //console.log(this.informacion.map.call.fechacreacion)
-
     if(this.noMostrar){
       this.isLogged = true;
   }

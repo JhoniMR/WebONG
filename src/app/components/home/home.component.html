@@ -39,7 +39,7 @@
                 <div class="card page-carousel">
                     <ngb-carousel>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/ong">
                             <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
                             </a>
                             <div class="carousel-caption">
@@ -47,7 +47,7 @@
                             </div>
                         </ng-template>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/ong">
                             <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
                             </a>
                             <div class="carousel-caption">
@@ -55,7 +55,7 @@
                             </div>
                         </ng-template>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/ong">
                             <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
                             </a>
                             <div class="carousel-caption">
@@ -71,7 +71,7 @@
                 <div class="card page-carousel">
                     <ngb-carousel>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/ejes">
                             <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
                             </a>
                             <div class="carousel-caption">
@@ -79,7 +79,7 @@
                             </div>
                         </ng-template>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/ejes">
                             <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
                             </a>
                             <div class="carousel-caption">
@@ -87,7 +87,7 @@
                             </div>
                         </ng-template>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/ejes">
                             <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
                             </a>
                             <div class="carousel-caption">
@@ -103,7 +103,7 @@
                 <div class="card page-carousel">
                     <ngb-carousel>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/actividades">
                             <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
                             </a>
                             <div class="carousel-caption">
@@ -111,7 +111,7 @@
                             </div>
                         </ng-template>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/actividades">
                             <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
                             </a>
                             <div class="carousel-caption">
@@ -119,7 +119,7 @@
                             </div>
                         </ng-template>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/actividades">
                             <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
                             </a>
                             <div class="carousel-caption">
@@ -135,7 +135,7 @@
                 <div class="card page-carousel">
                     <ngb-carousel>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/beneficios">
                             <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
                             </a>
                             <div class="carousel-caption">
@@ -143,7 +143,7 @@
                             </div>
                         </ng-template>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/beneficios">
                             <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
                             </a>
                             <div class="carousel-caption">
@@ -151,7 +151,7 @@
                             </div>
                         </ng-template>
                         <ng-template ngbSlide>
-                            <a href="hola">
+                            <a href="/#/beneficios">
                             <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
                             </a>
                             <div class="carousel-caption">
@@ -208,11 +208,17 @@
 </div> 
 
     <div class="btn-fromHome" *ngIf="user$ | async as user; else home">    
-         <a class="btn-mas" href="/#/from-home"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
-   </div>
+        <a class="btn-mas" href="/#/table-volunteers"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-user-run"> </li></button></a>
+        <div class="ubicate-button">
+            <a class="btn-mas" href="/#/from-home"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+        </div>
+    </div>
    
     <ng-template #home>
-        <a *ngIf="user" class="btn-mas" href="/#/from-home"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+        <a  *ngIf="user" class="btn-mas" href="/#/table-volunteers"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-user-run"> </li></button></a>
+        <div class="ubicate-button">
+            <a *ngIf="user" class="btn-mas" href="/#/from-home"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+        </div>
     </ng-template>
 
    

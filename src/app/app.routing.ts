@@ -25,7 +25,7 @@ import { ServicesComponent } from '../app/components/services/services.component
 
 import { FromHomeComponent } from '../app/components/froms/from-home/from-home.component';
 import { FromVolunteersComponent } from '../app/components/froms/from-volunteers/from-volunteers.component';
-
+import { TableVoluntariosComponent } from '../app/components/table-voluntarios/table-voluntarios.component';
 
 
 
@@ -52,6 +52,9 @@ const routes: Routes =[
     { path: 'login',            component: LoginComponent},
     { path: 'about-us',         component: AboutUsComponent},
     { path: 'services',         component: ServicesComponent},
+
+    { path: 'table-volunteers',            component: TableVoluntariosComponent, canActivate:[AngularFireAuthGuard] },
+    { path: 'editFromVolunteers/:id',            component: FromVolunteersComponent, canActivate:[AngularFireAuthGuard] },
 
 
    

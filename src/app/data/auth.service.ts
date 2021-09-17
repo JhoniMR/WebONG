@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -23,19 +24,28 @@ export class AuthService {
   getNoticias( path: string): Observable<any>{
     return this.firestore.collection(path, ref =>ref.orderBy('fechacreacion', 'desc').limit(15)).snapshotChanges();
   }
+  /* CRUD - MOSTRAR VOLUNTARIOS REGISTRADOS*/   
+  getVoluntarios( path: string): Observable<any>{
+    return this.firestore.collection(path, ref => ref.orderBy('fechaCreacion', 'desc')).snapshotChanges();
+  }
 
   /*ELIMINAR EMPLEADO*/
   eliminarNoticia(id: string, path: string): Promise<any>{
     return this.firestore.collection(path).doc(id).delete();
   }
 
+   /*TRAER UNA SOLA NOTICIA*/
   getNoticia(id: string, path: string): Observable<any>{
     return this.firestore.collection(path).doc(id).snapshotChanges();
   }
 
+  /*ACTUALIZAR O EDITAR*/
   actualizarNoticia(path: string, id: string, data: any): Promise<any>{
     return this.firestore.collection(path).doc(id).update(data);
   }
+
+
+
 
  
 
