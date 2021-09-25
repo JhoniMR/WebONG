@@ -1,0 +1,42 @@
+.section{
+    background: #283c86;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #45a247, #283c86);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #45a247, #283c86); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+  
+  .row {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  
+  img {
+    width: 22%;
+    margin: auto;
+    margin-top: 48px;
+}
+
+button.btn.btn-outline-primary {
+  margin-top: 70px;
+}
+
+.card {
+  margin: auto;
+}
+
+img.qrBancolombia {
+    margin-top: 7px;
+    width: 60%;
+}
+
+.Paypal {
+  margin-top: 66px;
+}
+
+img.qrNequi {
+  width: 60%;
+  margin-top: 5px;
+}
+  
+  

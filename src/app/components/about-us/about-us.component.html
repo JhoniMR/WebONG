@@ -31,10 +31,6 @@
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
     <title>Actividades meta visible</title>
   </head>
   <br>
@@ -198,20 +194,20 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label>Name</label>
-                            <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+                            <div class="input-group" >
                                 <div class="input-group-prepend">
                                   <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Name" (focus)="focus=true" (blur)="focus=false" >
+                                <input type="text" class="form-control" placeholder="Name">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label>Email</label>
-                            <div class="input-group" [ngClass]="{'input-group-focus':focus1===true}">
+                            <div class="input-group" >
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">  <i class="nc-icon nc-email-85"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Email" (focus)="focus1=true" (blur)="focus1=false" >
+                                <input type="text" class="form-control" placeholder="Email">
                             </div>
                         </div>
                     </div>

@@ -52,31 +52,29 @@ export class AuthService {
 
   /* LOGIN */      
   async login(correo: string, contrasena: string){
-    try{
       const result = await this.afAuth.signInWithEmailAndPassword(correo,contrasena);
       result;
-    }catch(error){
-      console.log('Este es el error de LOGIN: ', error);
-    }
   }
 
  /* REGISTRAME */    
   async register (correo: string, contrasena: string ){
-    try {
       const result = await this.afAuth.createUserWithEmailAndPassword(correo, contrasena);
       return; 
-    } catch (error) {
-      console.log('Este es el error de REGISTER: ', error);
-    } 
   }
+  
 
   /* SALIRME DEL LOGIN */  
   async logout() {
-    try {
       await this.afAuth.signOut();
-    } catch (error) {
-      console.log('Este es el error de LOGOUT: ', error);
-    }
   }
+
+  /* TENEMOS UN USUARIO */
+  hasUser(){
+     return this.afAuth.authState;
+  }
+
+
+
+
 
 } 

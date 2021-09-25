@@ -22,34 +22,33 @@ import { BeneficiosComponent } from '../app/components/slider/beneficios/benefic
 
 import { AboutUsComponent } from '../app/components/about-us/about-us.component';
 import { ServicesComponent } from '../app/components/services/services.component';
-
 import { FromHomeComponent } from '../app/components/froms/from-home/from-home.component';
 import { FromVolunteersComponent } from '../app/components/froms/from-volunteers/from-volunteers.component';
 import { TableVoluntariosComponent } from '../app/components/table-voluntarios/table-voluntarios.component';
-
-
+import { PaymentsComponent } from '../app/components/payments/payments.component';
+import { GuardLoginGuard } from './data/guard-login.guard';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
 
 
-    { path: 'inicio',             component: HomeComponent},
+    { path: 'inicio',             component: ComponentsComponent},
     
-    { path: 'login',              component: LoginComponent},
+    { path: 'login',              component: LoginComponent, canActivate:[GuardLoginGuard] },
     { path: 'ong',                component: OngComponent},
     { path: 'ejes',               component: EjesComponent},
     { path: 'actividades',        component: ActividadesComponent},
     { path: 'beneficios',         component: BeneficiosComponent},
-
     { path: 'home',             component: HomeComponent},
 
-
+    { path: 'payments',             component: PaymentsComponent},
+  
     
     { path: 'from-home',        component: FromHomeComponent, canActivate:[AngularFireAuthGuard]},
     { path: 'editFrom/:id',     component: FromHomeComponent,  canActivate:[AngularFireAuthGuard]   },
     { path: 'from-volunteers',  component: FromVolunteersComponent},
 
-    { path: 'login',            component: LoginComponent},
+
     { path: 'about-us',         component: AboutUsComponent},
     { path: 'services',         component: ServicesComponent},
 

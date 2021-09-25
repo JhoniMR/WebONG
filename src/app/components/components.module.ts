@@ -28,8 +28,6 @@ import { DataTablesModule } from "angular-datatables";
 import {MatTableModule} from '@angular/material/table';
 
 
-
-
 /*PAGUINAS*/
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -48,9 +46,8 @@ import { TableVoluntariosComponent } from './table-voluntarios/table-voluntarios
 import {MatButtonModule} from '@angular/material/button';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { PruebaComponent } from './slider/prueba/prueba.component';
-
 import { YouTubePlayerModule } from "@angular/youtube-player";
+import { PaymentsComponent } from './payments/payments.component';
 
 @NgModule({
     imports: [
@@ -72,8 +69,6 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
         MatTableExporterModule,
         NgxPaginationModule,
         YouTubePlayerModule,
-
-      
     ],
     declarations: [
         ComponentsComponent,
@@ -95,6 +90,7 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
         FromHomeComponent,
         FromVolunteersComponent,
         TableVoluntariosComponent,
+        PaymentsComponent,
         
  
 

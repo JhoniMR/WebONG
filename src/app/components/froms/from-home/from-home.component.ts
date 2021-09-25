@@ -27,7 +27,7 @@ export class FromHomeComponent implements OnInit {
         video: ['', Validators.required],
         descripcion: ['', Validators.required]
       })
-      this.id = this.aRouter.snapshot.paramMap.get('id'); 
+         this.id = this.aRouter.snapshot.paramMap.get('id'); 
     }
 
     private  path ='noticias';
@@ -37,8 +37,6 @@ export class FromHomeComponent implements OnInit {
   }
 
   agregarEditarNoticia(){
-   
-
     if(this.id === null){
       this.agregarNoticia();
     }else{
@@ -52,7 +50,7 @@ export class FromHomeComponent implements OnInit {
       imagen: this.crearNoticia.value.imagen,
       descripcion: this.crearNoticia.value.descripcion,
       video: this.crearNoticia.value.video,
-      fechacreacion: new Date(),
+      fechacreacion: new Date().getTime(),
     }
     this.loading = true;
     this.authService.agregarNoticias(valores, this.path).then(() => {
