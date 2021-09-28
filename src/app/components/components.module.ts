@@ -48,6 +48,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { PaymentsComponent } from './payments/payments.component';
+import { TableAboutUsComponent } from './table-about-us/table-about-us.component';
 
 @NgModule({
     imports: [
@@ -91,6 +92,7 @@ import { PaymentsComponent } from './payments/payments.component';
         FromVolunteersComponent,
         TableVoluntariosComponent,
         PaymentsComponent,
+        TableAboutUsComponent,
         
  
 

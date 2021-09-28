@@ -190,35 +190,56 @@
         <div class="row">
             <div class="col-md-8 mr-auto ml-auto">
                 <h2 class="text-center">Comunicate con nostros</h2>
-                <form class="contact-form">
+
+
+                <form  [formGroup]="formAbout" (ngSubmit)="agregarComentario()" class="contact-form">
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Name</label>
+                            <label>Nombre</label>
                             <div class="input-group" >
                                 <div class="input-group-prepend">
                                   <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Name">
+                                <input formControlName ="nombre" type="text" class="form-control" placeholder="nombre">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label>Email</label>
+                            <label>Correo</label>
                             <div class="input-group" >
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">  <i class="nc-icon nc-email-85"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Email">
+                                <input formControlName ="correo" type="text" class="form-control" placeholder="Correo">
                             </div>
                         </div>
                     </div>
-                    <label>Message</label>
-                    <textarea class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                    <label>Comentario</label>
+                    <textarea   formControlName ="descripcion" class="form-control" rows="4"  #message maxlength="300" placeholder="Evíanos un mensaje..."></textarea>
+                    <mat-hint align="end">{{message.value.length}} / 300</mat-hint>
                     <div class="row">
                         <div class="col-md-4 mr-auto ml-auto">
-                            <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
+                            <!--[disabled]="formAbout.invalid"-->
+                            <button  type="submit" class="btn btn-danger btn-lg btn-fill">Envíar
+                                <div *ngIf="loading" class="spinner-border float" role="status">
+                                    <span class="sr-only">Cargando ...</span>    
+                                 </div>
+                            </button>
                         </div>
                     </div>
                 </form>
+
+
+                <div class="btn-fromHome" *ngIf="user$ | async as user; else home">    
+                    <a class="btn-mas" href="/#/table-about"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-bullet-list-67"> </li></button></a>
+                  
+                </div>
+               
+                <ng-template #home>
+                    <a  *ngIf="user" class="btn-mas" href="/#/table-about"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-bullet-list-67"> </li></button></a>
+                </ng-template>
+            
+
+
             </div>
         </div>
     </div>

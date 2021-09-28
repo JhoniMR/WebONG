@@ -7,14 +7,14 @@
                 <div class="row">
                     <div class="col-md-9 mr-auto ml-auto">
                         <div class="logo-formulario">
-                            <img  src="../../../assets/logo/logo_negro.png" width="30%"  alt="">
+                            <img  src="../../../assets/logo/logo_negro.png" width="20%"  alt="">
                         </div>
                         <div class="alerta-campos">
                             <span *ngIf="submitted && crearNoticia.invalid" class="badge badge-danger"> TODOS LOS CAMPOS SON OBLIGATORIOS</span>
                         </div>
                         <form [formGroup]="crearNoticia" (ngSubmit)="agregarEditarNoticia()" class="contact-form">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-12">
                                     <label>Titulo</label>
                                     <div class="input-group" >
                                         <div class="input-group-prepend">
@@ -23,23 +23,23 @@
                                         <input formControlName ="titulo" type="text" class="form-control" placeholder="Titulo" >
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <label>Imagen</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                          <span class="input-group-text">  <i class="nc-icon nc-email-85"></i></span>
+                                          <span class="input-group-text">  <i class="nc-icon nc-album-2"></i></span>
                                         </div>
-                                        <input formControlName ="imagen" type="text" class="form-control" placeholder="imagen">
+                                            <input  type="file" (change)="uploadFile($event)" class="form-control">
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <label>Video</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                          <span class="input-group-text">  <i class="nc-icon nc-email-85"></i></span>
+                                          <span class="input-group-text">  <i class="nc-icon nc-button-play"></i></span>
                                         </div>
-                                        <input formControlName ="video" type="text" class="form-control" placeholder="imagen">
+                                        <input formControlName ="video" type="text" class="form-control" placeholder="Agregre el link de Youtube">
                                     </div>
                                 </div>
                             </div>

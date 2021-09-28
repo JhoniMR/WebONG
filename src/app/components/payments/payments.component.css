@@ -38,5 +38,12 @@ img.qrNequi {
   width: 60%;
   margin-top: 5px;
 }
+
+.alerta-campos {
+  font-size: 27px;
+  position: absolute;
+  left: 60px;
+  top: 12px;
+}
   
   

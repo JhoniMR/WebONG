@@ -4,6 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'app/data/auth.service';
 import Swal from 'sweetalert2';
 
+import { AngularFireStorage } from '@angular/fire/storage';
+import { finalize } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
+import { FirestoresService } from '../../../data/firestores.service'
+
 @Component({
   selector: 'app-from-home',
   templateUrl: './from-home.component.html',
@@ -16,10 +22,16 @@ export class FromHomeComponent implements OnInit {
 
   submitted = false; 
   loading = false;
+
+  image$: Observable<any>;
  
 
-  constructor(private fb: FormBuilder, private authService: AuthService,
-    private router: Router, private aRouter: ActivatedRoute) { 
+  constructor(private fb: FormBuilder, 
+              private authService: AuthService,
+              private router: Router,   
+              private aRouter: ActivatedRoute,
+              private angularFireStorage: AngularFireStorage,
+              private firestoresService: FirestoresService) { 
 
       this.crearNoticia = this.fb.group({
         titulo: ['', Validators.required],
@@ -102,6 +114,28 @@ export class FromHomeComponent implements OnInit {
         })
       })
     }
+  }
+
+  uploadFile(event){
+  
+    const file = event.target.files[0];
+    const name = event.target.files[0].name;
+    const fileRef = this.angularFireStorage.ref(name); 
+    const task = this.angularFireStorage.upload(name, file);
+    
+
+    task.snapshotChanges()
+    .pipe(
+      finalize(() =>{
+       
+        this.image$ = fileRef.getDownloadURL();
+        this.image$.subscribe(url =>{
+          console.log('esta es la URL->', url);
+          this.crearNoticia.get('imagen').setValue(url);
+        })
+      })
+    )
+    .subscribe();
   }
 
 }

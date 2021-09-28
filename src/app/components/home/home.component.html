@@ -27,6 +27,7 @@
         </h6>
     </div>
 
+    
 
 <!--SLIDER -->
 <div class="contend-slider">
@@ -212,27 +213,24 @@
        </div>
      </div>
    </div>
+
+   <div class="btn-fromHome" *ngIf="user$ | async as user; else home">    
+    <a class="btn-mas" href="/#/table-volunteers"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-bullet-list-67"> </li></button></a>
+    <div class="ubicate-button">
+        <a class="btn-mas" href="/#/from-home"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+    </div>
+</div>
+
+<ng-template #home>
+    <a  *ngIf="user" class="btn-mas" href="/#/table-volunteers"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-bullet-list-67"> </li></button></a>
+    <div class="ubicate-button">
+        <a *ngIf="user" class="btn-mas" href="/#/from-home"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+    </div>
+</ng-template>
+
 </div> 
 
-    <div class="btn-fromHome" *ngIf="user$ | async as user; else home">    
-        <a class="btn-mas" href="/#/table-volunteers"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-user-run"> </li></button></a>
-        <div class="ubicate-button">
-            <a class="btn-mas" href="/#/from-home"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
-        </div>
-    </div>
-   
-    <ng-template #home>
-        <a  *ngIf="user" class="btn-mas" href="/#/table-volunteers"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-user-run"> </li></button></a>
-        <div class="ubicate-button">
-            <a *ngIf="user" class="btn-mas" href="/#/from-home"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
-        </div>
-    </ng-template>
 
-   
-    
-
-
-    
 
 
    <br><br><br>  <br><br><br>

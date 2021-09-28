@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { ComponentsComponent } from './components/components.component';
 import { ProfileComponent } from './examples/profile/profile.component';
@@ -13,7 +13,6 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 /*PAGUINAS*/
 import { HomeComponent } from '../app/components/home/home.component';
 import { LoginComponent } from '../app/components/login/login.component';
-
 import { OngComponent } from '../app/components/slider/ong/ong.component';
 import { EjesComponent } from '../app/components/slider/ejes/ejes.component';
 import { ActividadesComponent } from '../app/components/slider/actividades/actividades.component';
@@ -27,6 +26,7 @@ import { FromVolunteersComponent } from '../app/components/froms/from-volunteers
 import { TableVoluntariosComponent } from '../app/components/table-voluntarios/table-voluntarios.component';
 import { PaymentsComponent } from '../app/components/payments/payments.component';
 import { GuardLoginGuard } from './data/guard-login.guard';
+import { TableAboutUsComponent } from './components/table-about-us/table-about-us.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -53,6 +53,7 @@ const routes: Routes =[
     { path: 'services',         component: ServicesComponent},
 
     { path: 'table-volunteers',            component: TableVoluntariosComponent, canActivate:[AngularFireAuthGuard] },
+    { path: 'table-about',            component: TableAboutUsComponent, canActivate:[AngularFireAuthGuard] },
     { path: 'editFromVolunteers/:id',            component: FromVolunteersComponent, canActivate:[AngularFireAuthGuard] },
 
 
@@ -71,7 +72,8 @@ const routes: Routes =[
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes,{
-      useHash: true
+      useHash: true,
+      preloadingStrategy: PreloadAllModules // estrateguia de precarga
     })
   ],
   exports: [

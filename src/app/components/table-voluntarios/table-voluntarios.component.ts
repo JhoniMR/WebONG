@@ -17,8 +17,11 @@ export class TableVoluntariosComponent implements OnInit {
   fileName= 'listaVoluntarios.xlsx';
   paginacion: number = 1;
 
-  exportexcel(): void
+  descargarexel = false;
+
+   exportexcel(): void
   {
+    
     /* pass here the table id */
     let element = document.getElementById('excel-table');
     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
@@ -28,6 +31,7 @@ export class TableVoluntariosComponent implements OnInit {
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
  
     /* save to file */  
+   
     XLSX.writeFile(wb, this.fileName);
 
   }
@@ -82,7 +86,10 @@ export class TableVoluntariosComponent implements OnInit {
     })
   }
 
-  buscador(){
+
+
+  async buscador(){
+  
     this.authService.getVoluntarios(this.path).subscribe(data =>{
       this.informacion = [];
         data.forEach((element:any) =>{
@@ -93,7 +100,11 @@ export class TableVoluntariosComponent implements OnInit {
         });
         console.log(this.informacion);
         this.informacion = this.informacion.filter(data =>{
-          return data.numerodocumento.toString().trim() === this.buscar;
+          return data.numerodocumento.toString().trim() === this.buscar || 
+                 data.nombres.toString().trim() === this.buscar || 
+                 data.apellidos.toString().trim() === this.buscar ||
+                 data.correo.toString().trim() === this.buscar ||
+                 data.numerocelular.toString().trim() === this.buscar;
         })
 
         if(this.informacion.length === 0){
@@ -110,8 +121,18 @@ export class TableVoluntariosComponent implements OnInit {
             'success'
           )
         }
+
+   
     });
  }
  
+ loading = false;
+
+ refrescar(): void {
+  this.loading = true;
+   window.location.reload();
+   }
+
+
 
 }

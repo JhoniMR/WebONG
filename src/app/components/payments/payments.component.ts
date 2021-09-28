@@ -45,5 +45,11 @@ export class PaymentsComponent implements OnInit {
     }).render(this.paypalElement.nativeElement);*/
 
   }
+ 
+  nofunciona = false;
+
+  fueraDeSerrvicio(){
+    this.nofunciona = true;
+  }
 
 }

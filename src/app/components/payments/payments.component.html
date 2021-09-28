@@ -29,6 +29,8 @@
 
         <div  class="col-md-4">
           <div class="card"  style="width: 18rem; margin-top: 100px; height: 80%;">
+            <div *ngIf="nofunciona" class="alerta-campos"><span _ngcontent-bpv-c201="" class="badge badge-danger">Fuera de servicio</span>
+            </div>
             <img style="width: 60%; margin-top: 60px;" src="../../../assets/payments/logo-bancolombia+(1).png"/>
             <div class="card-body">
               <div class="col-md-12" style="margin-top: 12px;">
@@ -37,9 +39,9 @@
                     <img class="qrBancolombia" src="../../../assets/qrs/bancolombia_wompi.PNG" alt="">
                   </p>
               </div>
-              <a href="https://checkout.wompi.co/l/uNa6RR">
-                <button type="button" class="btn btn-outline-primary">Donar</button> 
-              </a>
+             
+                <button (click)="fueraDeSerrvicio()" type="button" class="btn btn-outline-primary">Donar</button> 
+          
             </div>
           </div>
         </div>
