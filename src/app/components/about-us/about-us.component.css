@@ -13,7 +13,9 @@ body {
     font-family: "Open Sans", sans-serif;
     color: #272829;
   }
-  
+  .text-center {
+    margin-top: 57px;
+}
   a {
     color: #149ddd;
     text-decoration: none;
@@ -138,3 +140,11 @@ body {
     right: 0;
 }
 
+h2.text-center {
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  /* text-shadow: grey 0 6px; */
+  text-transform: uppercase;
+}

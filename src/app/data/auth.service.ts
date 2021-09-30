@@ -20,10 +20,17 @@ export class AuthService {
   return this.firestore.collection(path).add(valores);
   }
 
+   /* CRUD - MOSTRAR LAS NOTICIAS DESDE FIREBASE*/   
+   getservicios( path: string): Observable<any>{
+    return this.firestore.collection(path, ref =>ref.orderBy('fechacreacion','asc')).snapshotChanges();
+  }
+  
+
   /* CRUD - MOSTRAR LAS NOTICIAS DESDE FIREBASE*/   
   getNoticias( path: string): Observable<any>{
     return this.firestore.collection(path, ref =>ref.orderBy('fechacreacion', 'desc').limit(15)).snapshotChanges();
   }
+
   /* CRUD - MOSTRAR VOLUNTARIOS REGISTRADOS*/   
   getVoluntarios( path: string): Observable<any>{
     return this.firestore.collection(path, ref => ref.orderBy('fechaCreacion', 'desc')).snapshotChanges();

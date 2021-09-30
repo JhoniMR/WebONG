@@ -46,9 +46,13 @@ import { TableVoluntariosComponent } from './table-voluntarios/table-voluntarios
 import {MatButtonModule} from '@angular/material/button';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import {NgxPaginationModule} from 'ngx-pagination';
+
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { PaymentsComponent } from './payments/payments.component';
 import { TableAboutUsComponent } from './table-about-us/table-about-us.component';
+import { FromServicesComponent } from './froms/from-services/from-services.component';
+import { FromAboutUsComponent } from './froms/from-about-us/from-about-us.component';
+
 
 @NgModule({
     imports: [
@@ -93,6 +97,8 @@ import { TableAboutUsComponent } from './table-about-us/table-about-us.component
         TableVoluntariosComponent,
         PaymentsComponent,
         TableAboutUsComponent,
+        FromServicesComponent,
+        FromAboutUsComponent,
         
  
 

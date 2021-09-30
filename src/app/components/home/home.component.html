@@ -39,7 +39,7 @@
                     <ngb-carousel>
                         <ng-template ngbSlide>
                             <a href="/#/ong">
-                            <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
+                            <img class="fondo" src="https://cdn.pixabay.com/photo/2021/09/16/21/53/nature-6631144_960_720.jpg" alt="Random first slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>NUESTRA ONG</p>
@@ -47,7 +47,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/ong">
-                            <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
+                            <img src="https://cdn.pixabay.com/photo/2021/09/16/21/53/nature-6631144_960_720.jpg" alt="Random second slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>NUESTRA ONG</p>
@@ -55,7 +55,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/ong">
-                            <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
+                            <img src="https://cdn.pixabay.com/photo/2021/09/16/21/53/nature-6631144_960_720.jpg" alt="Random third slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>NUESTRA ONG</p>
@@ -71,7 +71,7 @@
                     <ngb-carousel>
                         <ng-template ngbSlide>
                             <a href="/#/ejes">
-                            <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
+                            <img src="https://cdn.pixabay.com/photo/2021/08/19/14/00/field-6558125_960_720.jpg" alt="Random first slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>EJES TRASNSVERSALES</p>
@@ -79,7 +79,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/ejes">
-                            <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
+                            <img src="https://cdn.pixabay.com/photo/2021/08/19/14/00/field-6558125_960_720.jpg" alt="Random second slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>EJES TRASNSVERSALES</p>
@@ -87,7 +87,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/ejes">
-                            <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
+                            <img src="https://cdn.pixabay.com/photo/2021/08/19/14/00/field-6558125_960_720.jpg" alt="Random third slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>EJES TRASNSVERSALES</p>
@@ -103,7 +103,7 @@
                     <ngb-carousel>
                         <ng-template ngbSlide>
                             <a href="/#/actividades">
-                            <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
+                            <img src="https://cdn.pixabay.com/photo/2021/09/12/17/43/jogging-6619078_960_720.jpg" alt="Random first slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>ACTIVIDADES</p>
@@ -111,7 +111,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/actividades">
-                            <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
+                            <img src="https://cdn.pixabay.com/photo/2021/09/12/17/43/jogging-6619078_960_720.jpg" alt="Random second slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>ACTIVIDADES</p>
@@ -119,7 +119,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/actividades">
-                            <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
+                            <img src="https://cdn.pixabay.com/photo/2021/09/12/17/43/jogging-6619078_960_720.jpg" alt="Random third slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>ACTIVIDADES</p>
@@ -135,7 +135,7 @@
                     <ngb-carousel>
                         <ng-template ngbSlide>
                             <a href="/#/beneficios">
-                            <img src="./assets/img/soroush-karimi.jpg" alt="Random first slide">
+                            <img src="https://cdn.pixabay.com/photo/2021/09/17/14/25/sea-6632924_960_720.jpg" alt="Random first slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>BENEFICIOS</p>
@@ -143,7 +143,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/beneficios">
-                            <img src="./assets/img/federico-beccari.jpg" alt="Random second slide">
+                            <img src="https://cdn.pixabay.com/photo/2021/09/17/14/25/sea-6632924_960_720.jpg" alt="Random second slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>BENEFICIOS</p>
@@ -151,7 +151,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/beneficios">
-                            <img src="./assets/img/joshua-stannard.jpg" alt="Random third slide">
+                            <img src="https://cdn.pixabay.com/photo/2021/09/17/14/25/sea-6632924_960_720.jpg" alt="Random third slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>BENEFICIOS</p>
@@ -195,9 +195,12 @@
           </div>
           <div  class="fehaDecreacion"> {{item.fechacreacion | date}}
          </div>
-          <div class="contenido-text">
+         <div style="text-align: justify;" class="form-floating">
+            <textarea  class="form-control sinColor" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 400px" disabled>{{item.descripcion}}</textarea>
+         </div>
+       <!--  <div class="contenido-text">
             <p style="text-align: justify;">{{item.descripcion}}</p>
-          </div>
+          </div> -->
          
             <a class="btn btn-primary"  href="{{item.video}}">VER VIDEO</a>
         

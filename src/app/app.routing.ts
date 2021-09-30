@@ -23,10 +23,12 @@ import { AboutUsComponent } from '../app/components/about-us/about-us.component'
 import { ServicesComponent } from '../app/components/services/services.component';
 import { FromHomeComponent } from '../app/components/froms/from-home/from-home.component';
 import { FromVolunteersComponent } from '../app/components/froms/from-volunteers/from-volunteers.component';
+import { FromServicesComponent } from './components/froms/from-services/from-services.component';
 import { TableVoluntariosComponent } from '../app/components/table-voluntarios/table-voluntarios.component';
 import { PaymentsComponent } from '../app/components/payments/payments.component';
 import { GuardLoginGuard } from './data/guard-login.guard';
 import { TableAboutUsComponent } from './components/table-about-us/table-about-us.component';
+import { FromAboutUsComponent } from './components/froms/from-about-us/from-about-us.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -39,22 +41,27 @@ const routes: Routes =[
     { path: 'ejes',               component: EjesComponent},
     { path: 'actividades',        component: ActividadesComponent},
     { path: 'beneficios',         component: BeneficiosComponent},
-    { path: 'home',             component: HomeComponent},
+    { path: 'home',               component: HomeComponent},
 
-    { path: 'payments',             component: PaymentsComponent},
+    { path: 'payments',           component: PaymentsComponent},
   
     
     { path: 'from-home',        component: FromHomeComponent, canActivate:[AngularFireAuthGuard]},
-    { path: 'editFrom/:id',     component: FromHomeComponent,  canActivate:[AngularFireAuthGuard]   },
+    { path: 'editFrom/:id',     component: FromHomeComponent,  canActivate:[AngularFireAuthGuard]},
     { path: 'from-volunteers',  component: FromVolunteersComponent},
 
+    { path: 'from-services',    component: FromServicesComponent, canActivate:[AngularFireAuthGuard]},
+    { path: 'from-services/:id',    component: FromServicesComponent, canActivate:[AngularFireAuthGuard]},
 
-    { path: 'about-us',         component: AboutUsComponent},
-    { path: 'services',         component: ServicesComponent},
+    { path: 'from-aboutUs',        component: FromAboutUsComponent, canActivate:[AngularFireAuthGuard]},
+    { path: 'from-aboutUs/:id',    component: FromAboutUsComponent, canActivate:[AngularFireAuthGuard]},
 
-    { path: 'table-volunteers',            component: TableVoluntariosComponent, canActivate:[AngularFireAuthGuard] },
-    { path: 'table-about',            component: TableAboutUsComponent, canActivate:[AngularFireAuthGuard] },
-    { path: 'editFromVolunteers/:id',            component: FromVolunteersComponent, canActivate:[AngularFireAuthGuard] },
+    { path: 'about-us',      component: AboutUsComponent},
+    { path: 'services',      component: ServicesComponent},
+
+    { path: 'table-volunteers',         component: TableVoluntariosComponent, canActivate:[AngularFireAuthGuard] },
+    { path: 'table-about',              component: TableAboutUsComponent, canActivate:[AngularFireAuthGuard] },
+    { path: 'editFromVolunteers/:id',   component: FromVolunteersComponent, canActivate:[AngularFireAuthGuard] },
 
 
    
