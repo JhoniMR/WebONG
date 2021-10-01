@@ -21,7 +21,7 @@ export class ServicesComponent implements OnInit {
     this.getMostrar(this.path);
   }
 
-  private  path ='fromServices';
+  private  path ='servicios';
 
   /* RECORRE LA BASE DE DATOS DE FIREBASE Y ME TRAE LA INF Y SU ID*/   
   getMostrar( path: string){

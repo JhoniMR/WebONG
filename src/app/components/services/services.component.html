@@ -44,7 +44,7 @@
 
           <h2>{{item.titulo}}</h2>
           <div style="text-align: justify;" class="form-floating">
-            <textarea  class="form-control sinColor" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 80px" disabled>{{item.descripcion}}</textarea>
+            <textarea  class="form-control sinColor" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" disabled>{{item.descripcion}}</textarea>
          </div>
         </div>
       </div>
@@ -66,6 +66,11 @@
           </div>        
         </div>
 
+        <div class="btn-fromHome" *ngIf="user$ | async as user; else home">    
+          <div class="ubicate-button">
+            <a class="btn-mas" href="/#/from-services"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+          </div>
+        </div>
 
 
 

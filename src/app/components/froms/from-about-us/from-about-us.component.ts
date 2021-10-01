@@ -30,7 +30,7 @@ export class FromAboutUsComponent implements OnInit {
                 this.id = this.aRouter.snapshot.paramMap.get('id'); 
               }
 
-              private  path ='fromAbout';
+              private  path ='nosotros';
 
   ngOnInit(): void {
     this.esEdit();

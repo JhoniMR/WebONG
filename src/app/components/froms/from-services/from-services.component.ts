@@ -29,7 +29,7 @@ export class FromServicesComponent implements OnInit {
                 this.id = this.aRouter.snapshot.paramMap.get('id'); 
               }
 
-              private  path ='fromServices';
+              private  path ='servicios';
 
   ngOnInit(): void {
     this.esEdit();

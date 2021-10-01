@@ -17,9 +17,7 @@
     margin-top: 48px;
 }
 
-button.btn.btn-outline-primary {
-  margin-top: 70px;
-}
+
 
 .card {
   margin: auto;
@@ -32,6 +30,12 @@ img.qrBancolombia {
 
 .Paypal {
   margin-top: 66px;
+}
+
+button.btn.btn-outline-primary {
+  position: absolute;
+    left: 36%;
+    top: 87%;
 }
 
 img.qrNequi {

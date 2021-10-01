@@ -120,7 +120,7 @@ export class FromAwardComponent implements OnInit {
   async uploadFile(event){
     this.cargaimg = true;
     const file = event.target.files[0];
-    const name = event.target.files[0].name;
+    const name = 'condecoracion.png';
     const fileRef = this.angularFireStorage.ref(name); 
     const task = this.angularFireStorage.upload(name, file);
     

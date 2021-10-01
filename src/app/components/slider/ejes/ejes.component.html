@@ -1,130 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <div class="page-header section-dark" style="background-image: url('https://territorioabierto.cl/wp-content/uploads/2014/03/Marzo_15_TFabrega.jpg')">
+    <div class="page-header section-dark" style="background-image: url('assets/img/antoine-barres.jpg')">
         <div class="filter"></div>
         <div class="content-center">
             <div class="container">
                 <div class="title-brand">
-                    
                     <div class="title-brand title-center">
                         <img src="../../../assets/logo/logo_ong.png" width="40%" alt="">
                     </div>
-                    <!-- <div class="fog-low">
-                        <img src="assets/img/fog-low.png" alt="">
-                    </div>
-                    <div class="fog-low right">
-                        <img src="assets/img/fog-low.png" alt="">
-                    </div>-->
                 </div>
                 <h2 class="presentation-subtitle text-center"></h2>
             </div>
         </div>
         <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
         <h6 class=" category-absolute ml-auto mr-auto">Se la mejor version  de ti mismo
-        <!-- <h6 class="category category-absolute">Designed and coded by -->
             <a href="https://www.creative-tim.com" target="_blank">
                 <img src="assets/img/creative-tim-white-slim2.png" class="creative-tim-logo">
             </a>
         </h6>
     </div>
 
-<head>
-    <meta charset="UTF-8">
-    
-    <link rel="stylesheet" href="">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-</head>
-    
     <div class="container">
-
-       
-       
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">EJES TRANSVERSALES</h2>
-                    
                 </div>
-                <br>
-                <br>
-                <br>
+                <br><br> <br>
+
                 <ul class="timeline">
-                    <li>
+                    <li  *ngFor="let item of informacion">
                         <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
                         <div class="timeline-panel">
+                            <div class="iconos" *ngIf="user$ | async as user; else botones">
+                                <a  [routerLink]="[ '/from-ong', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
+                                <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>
+                              </div>
                             <div class="timeline-heading">
-                                
-                                <h4 class="subheading">SALUD</h4>
-                            </div><br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">Acogiéndonos a los ODS (Objetivos de Desarrollo Sostenible) u Objetivos Mundiales propuestos por las Naciones Unidas para mejorar la calidad de vida de las personas,  brindamos servicios asistenciales y gratuitos en salud.</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                
-                                <h4 class="subheading">BELLEZA</h4>
-                            </div><br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">Nuestro compromiso por la integración social y la búsqueda de nuevas oportunidades nos impulsó a conformar el programa  “Elite por una belleza social” en la cual capacitamos a mujeres y a personas en condición de vulnerabilidad. En este curso las mujeres no solo aprenden de cortes, peinados y arreglo de manos, sino que también se les enseña servicio al cliente, emprendimiento, empoderamiento, empresarialismo e ideas y generación de negocios, para que sean generadoras de empleo.</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                
-                                <h4 class="subheading">RECREACIÓN</h4>
-                            </div><br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">En alianza con diferentes empresas, entre ellas Lokillos Recreación, y demás artistas talentosos de la región, como ex participantes en La Voz Kids, ofrecemos un abanico de alegría y entretenimiento conformado por  payasos, bailarines, animadores, cantantes y zumba.</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                               
-                                <h4 class="subheading">PROYECTOS PRODUCTIVOS</h4>
-                            </div><br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">En Proyectos Productivos, prestamos servicio de asistencia técnica, jurídica, y administrativa, además de ideas de generación de negocios, para impulsar el  desarrollo en las diferentes poblaciones, municipios y regiones donde hacemos presencia.</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                
-                                <h4 class="subheading">BIENESTAR ANIMAL</h4>
-                            </div><br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">En bienestar animal nos encargamos de desparasitar, vacunar y esterilizar a perros y gatos, esto con el fin de ayudar a mejorar la calidad de vida de los peladitos, los cuales son los afectados directos de las condiciones socioeconómicas de sus dueños.</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                
-                                <h4 class="subheading">REFORESTACIÓN</h4>
-                            </div><br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">En nuestra lucha por enfrentar el cambio climático, y contribuir a la seguridad alimentaria, conformamos un equipo de profesionales, el cual se encarga de sembrar árboles en lugares deforestados y en las orillas de los ríos para evitar desbordamientos y así contribuir al cuidado del planeta, también se les enseña a los niños jóvenes y adolescentes los pasos y la importancia de la siembra de árboles. </p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                
-                                <h4 class="subheading">INFRAESTRUCTURA</h4>
+                                <h4 class="subheading">{{item.titulo}}</h4>
                             </div>
-                            <br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">A través de proyectos de infraestructura y en alianza con diferentes organizaciones, hemos entregado viviendas a las personas más necesitadas. Nuestro equipo de profesionales está conformado por arquitectos  ingenieros  y topógrafos los cuales se encargan de generar estudios de infraestructura. 
-                                Dentro de nuestros logros se encuentra la construcción de la primera ciudadela ecológica en Colombia. Con esta iniciativa buscamos mejorar la calidad de vida de quien tanto lo necesitan.
-                                </p></div>
+                            <div style="text-align: justify;" class="form-floating">
+                                <textarea  class="form-control sinColor" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 430px" disabled>{{item.descripcion}}</textarea>
+                             </div>
                         </div>
-                    </li>
-                    
+                    </li> 
                 </ul>
+
+                <div class="btn-fromHome" *ngIf="user$ | async as user; else home">    
+                        <div class="ubicate-button">
+                          <a class="btn-mas" href="/#/from-ejes"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+                        </div>
+                </div>
             </div>
         </section>
 

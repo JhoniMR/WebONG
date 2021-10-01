@@ -5,16 +5,9 @@
         <div class="content-center">
             <div class="container">
                 <div class="title-brand">
-                    
                     <div class="title-brand title-center">
                         <img src="../../../assets/logo/logo_ong.png" width="40%" alt="">
                     </div>
-                    <!-- <div class="fog-low">
-                        <img src="assets/img/fog-low.png" alt="">
-                    </div>
-                    <div class="fog-low right">
-                        <img src="assets/img/fog-low.png" alt="">
-                    </div>-->
                 </div>
                 <h2 class="presentation-subtitle text-center"></h2>
             </div>
@@ -27,137 +20,83 @@
             </a>
         </h6>
     </div>
-<head>
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Actividades meta visible</title>
-  </head>
-  <br>
  <body>
  
   <section id="resume" class="resume">
     <div class="container">
-
-      <div class="section-title">
-        <h2>¿Por qué nosotros?</h2>
-        <p style="text-align: justify;">Porque somos la red de apoyo social más grande de Colombia con siete ejes transversales de apoyo a las comunidades mas necesitadas</p>
-      </div>
-
       <div class="row">
-        <div class="col-lg-6" data-aos="fade-up">
-          
-            <h3 class="resume-title"></h3>
-            <div class="resume-item">
-              <h4>Misión</h4>
-              
-              <p style="text-align: justify;">La FUNDACIÓN META VISIBLE ONG consolidada como red de apoyo social más grande de Colombia propende ejecutar planes de desarrollo locales y regionales incluyentes que beneficien poblaciones de difícil acceso a la salud y con problemas de comunicación con ejes transversales de ayuda como lo son: SALUD, BELLEZA, RECREACIÓN, PROYECTOS PRODUCTIVOS, BIENESTAR ANIMAL Y REFORESTACIÓN E INFRAESTRUCTURA brindando herramientas reales a los mas necesitados.</p>
-            </div>
-            <div class="resume-item">
-              <h4>Visión</h4>
-              
-              <p style="text-align: justify;">Para el 2025 la organización de la FUNDACIÓN META VISIBLE ONG y su misión humanitaria internacional, será reconocida en latinoamerica por su compromiso social con el desarrollo de las causas misionales de participación, brindando soluciones en los ámbitos de la ASISTENCIA HUMANITARIA. EL DESARROLLO, LA PAZ Y LA SEGURIDAD.
 
-            </p>
-            </div>
-          
-          
-            <h3 class="resume-title"></h3>
-            <div class="resume-item">
-                <h4>¿Cómo nos identificamos?</h4>
-                
-                <p style="text-align: justify;">Nos caracterizamos por hacer las cosas de corazón y no por una mención, somos una organizacion con 458 voluntarios que entregan lo mejor de sí para el bienestar de los que mas nos necesitan. 
-                    Un grupo de profesionales interdisciplinarios comprometidos con la asistencia de razones humanitarias envueltas en la satisfaccion de poder auydar sin ninguna remuneración.
-  
-              </p>
+      <div class="col-md-10">
+        <div *ngFor="let item of informacion; index as i">
+            <div *ngIf="i === 0" class="section-title" class="section-title">
+             <div class="iconos" *ngIf="user$ | async as user; else botones">
+                <a  [routerLink]="[ '/from-aboutUs', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
+               <!-- <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>  -->
+             </div>
+              <h2>{{item.titulo}}</h2>
+              <div style="text-align: justify;" class="form-floating">
+                  <textarea  class="form-control sinColor" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 80px" disabled>{{item.descripcion}}</textarea>
               </div>
-
             </div>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item">
-            <h4>¿Quiénes somos?</h4>
-            
-            <p style="text-align: justify;">Nacemos en el año 2015 en la ciudad de Villavicencio y actualmente hacemos presencia en 17 departamentos cubriendo el 70% del territorio nacional y tenemos presencia en PERÚ. PANAMÁ y BRASIL.
-                A la fecha contamos con mas de 52.000 personas que se han visto beneficiadas con nuestras actividades.
-                Somos una entidad sin animo de lucro con alta vocación de servicio social, que trabaja a favor de las personas que han sido victimas del conflicto armado y la población vulnerable de Colombia, Hay un énfasis en el acompañamiento para la reparación, la integración, la reinserción y la inclusión social; Apostándole a los procesos primordiales de apoyo psicosocial argumentados en forma de promoción, prevención y atención así como los métodos básicos educativos de primer principio de superación personal, que busca crear proyectos de fortalecimiento y/o emprendimiento de pequeñas y medianas empresas con el deseo de mejorar la calidad de vida en dicha población.
-                Cabe destacar que es un trabajo social voluntario, y todas las personas que
-                acompañan las actividades, donan su tiempo, su vocación y su conocimiento para ayudar a los mas necesitados.
-
-          </p>
           </div>
-          <div class="resume-item">
-            <h4>¿Qué buscamos?</h4>
-            
-            <ul>
-              <li style="text-align: justify;">La excelencia y el reconocimiento como una ONG constructiva aliada del desarrollo con estandares de calidad en la asistencia a las poblaciones más vulnerables.</li>
-              <li style="text-align: justify;">El poder llegar a sitios tan lejanos y olvidados dentro del territoeio nacional con problemas de comunicación y de dificil acceso a la salud.</li>
-              <li style="text-align: justify;">Estructurar herramientas de apoyo para la generación de microestructuras empresariales que permitan el sosteniemiento de nucleos familiares que propendan en la eliminación de la pobreza extrema.</li>
-            </ul>
+      </div>  
+    </div>
+     
+      <div class="row">
+        <div class="col-md-12">
+            <div *ngFor="let item of informacion; index as i">
+                <div *ngIf="i > 0" class="resume-item" class="col-lg-10" data-aos="fade-up">
+                    <div class="resume-item">
+                        <div class="iconos" *ngIf="user$ | async as user; else botones">
+                            <a  [routerLink]="[ '/from-aboutUs', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
+                            <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>  
+                         </div>
+                      <h4>{{item.titulo}}</h4>    
+                      <div style="text-align: justify;" class="form-floating">
+                        <textarea  class="form-control sinColor" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 300px" disabled>{{item.descripcion}}</textarea>
+                     </div>
+                    </div>
+                </div>
+                </div>
           </div>
-        </div>
       </div>
-
+          
+      
     </div>
   </section>
 
-  <div class="section section-dark text-center">
+  <div *ngFor="let item of condecoracion" class="section section-dark text-center">
     <div class="container">
-        <h2 class="title">Condecoración por parte del Concejo Municipal de Villavicencio.</h2>
+        <div class="condecoracion" *ngIf="user$ | async as user; else botones">
+            <a  [routerLink]="[ '/from-award', item.id ]"> <img  class="editar" style="width: 3.5%;" src="../../../assets/svg/lapiz.svg"/></a>
+            <a  (click)="preguntaEliminarCondecoracion(item.id)"> <img class="eliminar" style="width: 3.5%;" src="../../../assets/svg/bote-de-basura.svg"/></a> 
+        </div>
+        <h2  class="text-center-condecorado">{{item.titulo}}</h2>
         <div class="row">
-
-            
             <div class="col-md-2">
-
-            </div>
+            </div>  
             <div class="col-md-8">
                 <div class="card card-profile card-plain">
                     <div class="card-avatar">
-                        <a href="#avatar"><img src="./assets/img/oscarboletin.jpeg" alt="..."></a>
+                        <a href="#avatar"><img [src]="item.imagen" alt="..."></a>
                     </div>
-                    
-                    
                 </div>
             </div>
-
-            
-
         </div>
-
         <div>
             <div class="row">
               <div class="col-md-2">
-
               </div>
               <div class="col-md-8">
-                
-                <p class="description" style="text-align: justify;">
-                    En un acto público llevado a cabo en las instalaciones del Concejo Municipal, se exaltó la labor social que cumple la Fundación Meta Visible en el país, y su aporte al desarrollo y crecimiento de los territorios más necesitados.<br><br>
-                    En el evento se resaltaron los logros que ha obtenido la ONG durante sus seis años de conformación;  entre ellos la asistencia médica integral a más de 63 mil personas a lo largo y ancho del país, la capacitación a más de 8.600 emprendedores en situación de vulnerabilidad en el programa “Elite por una belleza social”, el apoyo en la participación de 34 artistas en el programa La Voz Kids y Yo Me Llamo, y la colaboración en más de 27 mercados campesinos.<br><br>
-                    También destacaron los diferentes premios, reconocimientos y condecoraciones, entre los cuales se destacan:<br><br>
-                       <li>-Medalla de honor otorgada por el municipio de Puerto Lleras la Orden del Mérito Civil.</li>
-                       <li> “Mejores Prácticas de RSE”, reconocimiento otorgado por CEMEFI.</li>
-                       <li> Reconocimiento por sus “Experiencias Relevantes de Participación Ciudadana” otorgado por la gobernación de Arauca.</li>
-                       <li> Reconocimiento al Liderazgo en categoría Liderazgo Sostenible por la Cámara de Comercio de Villavicencio.</li>
-                       <li> Nominación durante 3 años consecutivos al premio TITANES CARACOL.</li>
-                       <li> Moneda de Honor otorgada por el batallón de desminado Humanitario # 4.</li>
-                       <li> Moneda de Honor otorgada por el batallón ALBÁN.</li>
-                       <li> Moneda de Honor otorgada por el BAEEV 14. </li>
-                       <li> Reconocimiento a la Misión Humanitaria Internacional otorgado por el Banco de Sangre del Hospital Departamental de Villavicencio.</li>
-                         
-                </p>
+                <div style="text-align: justify;" class="form-floating">
+                    <textarea class="form-control sinColor colortext" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 800px" disabled>{{item.descripcion}}</textarea>
+                 </div>
               </div>
-             
               <div class="col-md-2">
-
               </div>
-
             </div>
         </div>
-
-
-
     </div>
 </div>
 
@@ -165,7 +104,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mr-auto ml-auto">
-                <h2 class="text-center">Comunicate con nostros</h2>
+                <h2 class="text-center">Comunicate con nosotros</h2>
 
 
                 <form  [formGroup]="formAbout" (ngSubmit)="agregarComentario()" class="contact-form">
@@ -204,22 +143,24 @@
                     </div>
                 </form>
 
-
-                <div class="btn-fromHome" *ngIf="user$ | async as user; else home">    
-                    <a class="btn-mas" href="/#/table-about"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-bullet-list-67"> </li></button></a>
-                  
-                </div>
-               
-                <ng-template #home>
-                    <a  *ngIf="user" class="btn-mas" href="/#/table-about"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-bullet-list-67"> </li></button></a>
-                </ng-template>
-            
-
+              
 
             </div>
         </div>
+
+        <div class="posicionBotones">
+            <div class="btn-fromHome" *ngIf="user$ | async as user; else home">    
+                <a class="btn-mas" href="/#/table-about"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-bullet-list-67"> </li></button></a>
+                <div class="ubicate-button">
+                    <a class="btn-mas" href="/#/from-aboutUs"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+                </div>
+                <a class="btn-mas" href="/#/from-award"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-diamond"> </li></button></a>
+            </div>
+        </div>  
     </div>
 </div>
+
+
 
 </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>

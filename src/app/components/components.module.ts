@@ -50,8 +50,15 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { PaymentsComponent } from './payments/payments.component';
 import { TableAboutUsComponent } from './table-about-us/table-about-us.component';
+
 import { FromServicesComponent } from './froms/from-services/from-services.component';
 import { FromAboutUsComponent } from './froms/from-about-us/from-about-us.component';
+import { FromAwardComponent } from './froms/from-award/from-award.component';
+import { FromOngComponent } from './froms/from-ong/from-ong.component';
+import { FromEjesComponent } from './froms/from-ejes/from-ejes.component';
+import { FromActividadesComponent } from './froms/from-actividades/from-actividades.component';
+import { FromAbeneficiosComponent } from './froms/from-abeneficios/from-abeneficios.component';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -99,6 +106,12 @@ import { FromAboutUsComponent } from './froms/from-about-us/from-about-us.compon
         TableAboutUsComponent,
         FromServicesComponent,
         FromAboutUsComponent,
+        FromAwardComponent,
+        FromOngComponent,
+        FromEjesComponent,
+        FromActividadesComponent,
+        FromAbeneficiosComponent,
+        ErrorComponent,
         
  
 

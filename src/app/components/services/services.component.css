@@ -1,14 +1,31 @@
 /* CONTENIDO DEL TEXTO */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 .sinColor {
   background: #f0ffff00;
   border: none;
 }
 
 textarea#floatingTextarea2 {
+  font-family: 'Poppins', sans-serif;
   text-align: justify;
+  font-size: 16px;
 }
 /*  FIN DEL CONTENIDO */
+.btn-fromHome{
+  text-align: end;
+  padding: 12px;
+  margin-right: 20px;
+}
 
+.btn-fromHome {
+  position: flex;
+  position: fixed;
+  left: 0;
+  top: 85%;
+  right: 0;
+}
 html {
     scroll-behavior: smooth;
 }

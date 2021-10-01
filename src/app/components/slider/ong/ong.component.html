@@ -6,125 +6,52 @@
         <div class="content-center">
             <div class="container">
                 <div class="title-brand">
-                    
                     <div class="title-brand title-center">
                         <img src="../../../assets/logo/logo_ong.png" width="40%" alt="">
                     </div>
-                    <!-- <div class="fog-low">
-                        <img src="assets/img/fog-low.png" alt="">
-                    </div>
-                    <div class="fog-low right">
-                        <img src="assets/img/fog-low.png" alt="">
-                    </div>-->
                 </div>
                 <h2 class="presentation-subtitle text-center"></h2>
             </div>
         </div>
         <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
         <h6 class=" category-absolute ml-auto mr-auto">Se la mejor version  de ti mismo
-        <!-- <h6 class="category category-absolute">Designed and coded by -->
             <a href="https://www.creative-tim.com" target="_blank">
                 <img src="assets/img/creative-tim-white-slim2.png" class="creative-tim-logo">
             </a>
         </h6>
     </div>
 
-<head>
-    <meta charset="UTF-8">
-    
-    <link rel="stylesheet" href="">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-</head>
-    
     <div class="container">
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">NUESTRA ONG</h2>
-                    
                 </div>
                 <br><br> <br>
 
                 <ul class="timeline">
-                    <li>
+                    <li  *ngFor="let item of informacion">
                         <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
                         <div class="timeline-panel">
+                            <div class="iconos" *ngIf="user$ | async as user; else botones">
+                                <a  [routerLink]="[ '/from-ong', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
+                                <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>
+                              </div>
                             <div class="timeline-heading">
-                                
-                                <h4 class="subheading">GRUPO ELITE DE BELLEZA</h4>
+                                <h4 class="subheading">{{item.titulo}}</h4>
                             </div>
-                            <br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">El GRUPO ELITE DE BELLEZA es un instituto comprometido en ofrecer los servicios de educación con la más alta calidad, aportando a nuestros alumnos los conocimientos necesarios basados desde la experiencia, para que desarrollen al máximo todas sus habilidades y lograr mujeres económicamente independientes.</p></div>
+                            <div style="text-align: justify;" class="form-floating">
+                                <textarea  class="form-control sinColor" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 430px" disabled>{{item.descripcion}}</textarea>
+                             </div>
                         </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                
-                                <h4 class="subheading">CASAI</h4>
-                            </div>
-                            <br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">LA CORPORACIÓN PARA LA CAPACITACIÓN DE SALUD INTEGRAL "CASAI", es una institución de formación para el trabajo y desarrollo humano, que forma en ciencias de salud, con un alto sentido ético, humano y pedagógico, capaces de orientar, asistir y participar en el cuidado integral del paciente y su familia. Desarrollando prácticas que promueva la salud y prevenga la enfermedad en el área comunitaria, clínica y empresarial; actuando con éxito en el campo laboral de la salud, a través de un equipo humano profesional comprometido y competente.</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                
-                                <h4 class="subheading">FUNDACIÓN TERESITA CORAZÓN</h4>
-                            </div>
-                            <br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">En la FUNDACIÓN TERESITA CORAZÓN creemos en una segunda oportunidad, somos una fundación sin ánimo de lucro, orientada a brindar asistencia psicosocial a los niños con afecciones cardiacas. Además brindará cuidados con programas de salud a través de la alianza con la organización CORAZÓN COLOMBIA y la FUNDACIÓN SHAIO; dirigidos a familias vulnerables de sectores deprimidos y que tengan niños entre 1 a 18 años con problemas cardiovasculares, del ámbito Nacional e Internacional. Operamos y damos vida a los sueños!.</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                               
-                                <h4 class="subheading">FUNDACIÓN PENDULO</h4>
-                            </div>
-                            <br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">La FUNDACIÓN PENDULO es una fundación activa en la sociedad promoviendo los valores culturales, democráticos y sociales de la población LGBT, y que promueve una sociedad en la que las personas vivan con libertad su orientación sexual e identidad de género.</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                
-                                <h4 class="subheading">FUNDACION TODOS APORTAMOS</h4>
-                            </div>
-                            <br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">La FUNDACION TODOS APORTAMOS busca mejorar la calidad de vida y el bienestar social a través de proyectos de promoción e iniciativas que respondan a los retos e inquietudes que la sociedad actualmente demanda.</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                
-                                <h4 class="subheading">CJHR S.A.S.</h4>
-                            </div>
-                            <br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">La Comercializadora CJHR S.A.S. tiene por objeto principal efectuar operaciones de comercio exterior, también orienta sus actividades hacia la promoción y comercialización de productos nacionales en el mercado internacional. Dentro de su objeto se incluye las importaciones de bienes e insumos para abastecer el mercado interno, o para transformarlos y exportarlos. (Ley 67 de 1979, reglamentada por el Dto. 1740 de 1994).</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                
-                                <h4 class="subheading">FUNDACIÓN NOAH-H</h4>
-                            </div>
-                            <br>
-                            <div class="timeline-body"><p class="text-muted" style="text-align: justify;">La FUNDACIÓN NOAH-H tiene como objeto ayudar a la transformación de vidas de las personas mas necesitadas, desde todas las dimensiones del ser; con un enfoque inclusivo y orientado por un equipo interdisciplinario con alta idoneidad, con una visión saludable, educativa, social y ambiental de impacto intersectorial. Buscando la protección integral y fomentando la corresponsabilidad de las familias como núcleo fundamental, la escuela como entorno protector y del contexto como comunidad afectiva y formadora. Y de la mano de la responsabilidad social de las personas naturales, empresas y alianzas público privadas.</p></div>
-                        </div>
-                    </li>
-                    
+                    </li> 
                 </ul>
+
+                <div class="btn-fromHome" *ngIf="user$ | async as user; else home">    
+                        <div class="ubicate-button">
+                          <a class="btn-mas" href="/#/from-ong"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+                        </div>
+                </div>
             </div>
         </section>
 

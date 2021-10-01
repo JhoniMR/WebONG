@@ -28,17 +28,27 @@ import { TableVoluntariosComponent } from '../app/components/table-voluntarios/t
 import { PaymentsComponent } from '../app/components/payments/payments.component';
 import { GuardLoginGuard } from './data/guard-login.guard';
 import { TableAboutUsComponent } from './components/table-about-us/table-about-us.component';
+
 import { FromAboutUsComponent } from './components/froms/from-about-us/from-about-us.component';
+import { FromAwardComponent } from './components/froms/from-award/from-award.component';
+import { FromOngComponent } from './components/froms/from-ong/from-ong.component';
+import { FromEjesComponent } from './components/froms/from-ejes/from-ejes.component';
+import { FromActividadesComponent } from './components/froms/from-actividades/from-actividades.component';
+import { FromAbeneficiosComponent } from './components/froms/from-abeneficios/from-abeneficios.component';
+
+
+import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
 
 
+    { path: '404',             component: ErrorComponent},
     { path: 'inicio',             component: ComponentsComponent},
     
     { path: 'login',              component: LoginComponent, canActivate:[GuardLoginGuard] },
-    { path: 'ong',                component: OngComponent},
-    { path: 'ejes',               component: EjesComponent},
+    { path: 'nuestraOng',                component: OngComponent},
+    { path: 'ejesTransversales',               component: EjesComponent},
     { path: 'actividades',        component: ActividadesComponent},
     { path: 'beneficios',         component: BeneficiosComponent},
     { path: 'home',               component: HomeComponent},
@@ -55,6 +65,21 @@ const routes: Routes =[
 
     { path: 'from-aboutUs',        component: FromAboutUsComponent, canActivate:[AngularFireAuthGuard]},
     { path: 'from-aboutUs/:id',    component: FromAboutUsComponent, canActivate:[AngularFireAuthGuard]},
+    
+    { path: 'from-award',        component: FromAwardComponent, canActivate:[AngularFireAuthGuard]},
+    { path: 'from-award/:id',    component: FromAwardComponent, canActivate:[AngularFireAuthGuard]},
+
+    { path: 'from-ong',        component: FromOngComponent, canActivate:[AngularFireAuthGuard]},
+    { path: 'from-ong/:id',    component: FromOngComponent, canActivate:[AngularFireAuthGuard]},
+
+    { path: 'from-ejes',        component: FromEjesComponent, canActivate:[AngularFireAuthGuard]},
+    { path: 'from-ejes/:id',    component: FromEjesComponent, canActivate:[AngularFireAuthGuard]},
+
+    { path: 'from-actividades',        component: FromActividadesComponent, canActivate:[AngularFireAuthGuard]},
+    { path: 'from-actividades/:id',    component: FromActividadesComponent, canActivate:[AngularFireAuthGuard]},
+
+    { path: 'from-beneficios',        component: FromAbeneficiosComponent, canActivate:[AngularFireAuthGuard]},
+    { path: 'from-beneficios/:id',    component: FromAbeneficiosComponent, canActivate:[AngularFireAuthGuard]},
 
     { path: 'about-us',      component: AboutUsComponent},
     { path: 'services',      component: ServicesComponent},
