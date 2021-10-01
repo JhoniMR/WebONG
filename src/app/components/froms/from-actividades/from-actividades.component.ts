@@ -4,16 +4,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'app/data/auth.service';
 import Swal from 'sweetalert2';
 
-
 @Component({
-  selector: 'app-from-about-us',
-  templateUrl: './from-about-us.component.html',
-  styleUrls: ['./from-about-us.component.css']
+  selector: 'app-from-actividades',
+  templateUrl: './from-actividades.component.html',
+  styleUrls: ['./from-actividades.component.css']
 })
-export class FromAboutUsComponent implements OnInit {
+export class FromActividadesComponent implements OnInit {
 
- 
-  fromOng: FormGroup;
+  fromActividades: FormGroup;
   loading = false;
 
   id: string | null;
@@ -23,14 +21,14 @@ export class FromAboutUsComponent implements OnInit {
               private router: Router, 
               private aRouter: ActivatedRoute,) {
 
-                this.fromOng = this.fb.group({
+                this.fromActividades = this.fb.group({
                   titulo: ['', Validators.required],
                   descripcion: ['', Validators.required],
                 })
                 this.id = this.aRouter.snapshot.paramMap.get('id'); 
               }
 
-              private  path ='fromAbout';
+              private  path ='actividades';
 
   ngOnInit(): void {
     this.esEdit();
@@ -46,8 +44,8 @@ export class FromAboutUsComponent implements OnInit {
 
   agregarNoticia(){
     const valores: any = {
-      titulo: this.fromOng.value.titulo,
-      descripcion: this.fromOng.value.descripcion,
+      titulo: this.fromActividades.value.titulo,
+      descripcion: this.fromActividades.value.descripcion,
       fechacreacion: new Date().getTime(),
     }
 
@@ -58,7 +56,7 @@ export class FromAboutUsComponent implements OnInit {
         '',
         'success'
       )
-    this.router.navigate(['/about-us']); 
+    this.router.navigate(['/actividades']); 
     return;   
     }).catch(error =>{
       
@@ -69,8 +67,8 @@ export class FromAboutUsComponent implements OnInit {
 
   editarNoticia(id: string){
     const valores: any = {
-      titulo: this.fromOng.value.titulo,
-      descripcion: this.fromOng.value.descripcion,
+      titulo: this.fromActividades.value.titulo,
+      descripcion: this.fromActividades.value.descripcion,
     }
     this.loading = true;
     this.authService.actualizarNoticia(this.path, id, valores ).then(()=>{
@@ -81,7 +79,7 @@ export class FromAboutUsComponent implements OnInit {
         'success'
       )
     });
-     this.router.navigate(['/about-us']); 
+     this.router.navigate(['/actividades']); 
   }
 
   esEdit(){
@@ -89,7 +87,7 @@ export class FromAboutUsComponent implements OnInit {
       this.loading = true;  
       this.authService.getNoticia(this.id, this.path).subscribe(data =>{
         this.loading = false;
-        this.fromOng.setValue({
+        this.fromActividades.setValue({
           titulo: data.payload.data()['titulo'],
           descripcion: data.payload.data()['descripcion'],
         })

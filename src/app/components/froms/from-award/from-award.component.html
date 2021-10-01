@@ -6,15 +6,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 mr-auto ml-auto">
-                    <!--    <div class="logo-formulario">
+                     <!--   <div class="logo-formulario">
                             <img  src="../../../assets/logo/logo_negro.png" width="20%"  alt="">
-                        </div> -->
+                        </div>  -->
                         <div class="alerta-campos">
                             <span *ngIf="submitted && crearNoticia.invalid" class="badge badge-danger"> TODOS LOS CAMPOS SON OBLIGATORIOS</span>
                         </div>
-                        <form [formGroup]="crearNoticia" (ngSubmit)="agregarEditarNoticia()" class="contact-form">
+
+                        <form [formGroup]="fromCondecoracion" (ngSubmit)="agregarEditarNoticia()" >
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <label>Titulo</label>
                                     <div class="input-group" >
                                         <div class="input-group-prepend">
@@ -28,26 +29,17 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text">  <i class="nc-icon nc-album-2"></i></span>
-                                          <div *ngIf="loading" class="spinner-border float" role="status">
-                                            <span class="sr-only">Cargando ...</span>    
-                                         </div>
+                                          <div *ngIf="cargaimg" class="spinner-border float" role="status">
+                                             <span class="sr-only">Cargando ...</span>    
+                                          </div>
                                         </div>
                                             <input  type="file" (change)="uploadFile($event)" class="form-control">
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <label>Video</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text">  <i class="nc-icon nc-button-play"></i></span>
-                                        </div>
-                                        <input formControlName ="video" type="text" class="form-control" placeholder="Agregre el link de Youtube">
-                                    </div>
-                                </div>
                             </div>
                             <label>Message</label>
-                                <textarea formControlName ="descripcion" appearance="fill"  matInput #message maxlength="3000" class="form-control" type="text" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                                <textarea style="height: 200px;" formControlName ="descripcion" appearance="fill"  matInput #message maxlength="3000" class="form-control" type="text" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
                                 <mat-hint align="end">{{message.value.length}} / 3000</mat-hint>
                                <div class="row">
                             

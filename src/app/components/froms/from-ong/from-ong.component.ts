@@ -6,14 +6,13 @@ import Swal from 'sweetalert2';
 
 
 @Component({
-  selector: 'app-from-about-us',
-  templateUrl: './from-about-us.component.html',
-  styleUrls: ['./from-about-us.component.css']
+  selector: 'app-from-ong',
+  templateUrl: './from-ong.component.html',
+  styleUrls: ['./from-ong.component.css']
 })
-export class FromAboutUsComponent implements OnInit {
-
+export class FromOngComponent implements OnInit {
  
-  fromOng: FormGroup;
+  fromAbout: FormGroup;
   loading = false;
 
   id: string | null;
@@ -23,14 +22,14 @@ export class FromAboutUsComponent implements OnInit {
               private router: Router, 
               private aRouter: ActivatedRoute,) {
 
-                this.fromOng = this.fb.group({
+                this.fromAbout = this.fb.group({
                   titulo: ['', Validators.required],
                   descripcion: ['', Validators.required],
                 })
                 this.id = this.aRouter.snapshot.paramMap.get('id'); 
               }
 
-              private  path ='fromAbout';
+              private  path ='nuestraOng';
 
   ngOnInit(): void {
     this.esEdit();
@@ -46,8 +45,8 @@ export class FromAboutUsComponent implements OnInit {
 
   agregarNoticia(){
     const valores: any = {
-      titulo: this.fromOng.value.titulo,
-      descripcion: this.fromOng.value.descripcion,
+      titulo: this.fromAbout.value.titulo,
+      descripcion: this.fromAbout.value.descripcion,
       fechacreacion: new Date().getTime(),
     }
 
@@ -58,7 +57,7 @@ export class FromAboutUsComponent implements OnInit {
         '',
         'success'
       )
-    this.router.navigate(['/about-us']); 
+    this.router.navigate(['/nuestraOng']); 
     return;   
     }).catch(error =>{
       
@@ -69,8 +68,8 @@ export class FromAboutUsComponent implements OnInit {
 
   editarNoticia(id: string){
     const valores: any = {
-      titulo: this.fromOng.value.titulo,
-      descripcion: this.fromOng.value.descripcion,
+      titulo: this.fromAbout.value.titulo,
+      descripcion: this.fromAbout.value.descripcion,
     }
     this.loading = true;
     this.authService.actualizarNoticia(this.path, id, valores ).then(()=>{
@@ -81,7 +80,7 @@ export class FromAboutUsComponent implements OnInit {
         'success'
       )
     });
-     this.router.navigate(['/about-us']); 
+     this.router.navigate(['/nuestraOng']); 
   }
 
   esEdit(){
@@ -89,7 +88,7 @@ export class FromAboutUsComponent implements OnInit {
       this.loading = true;  
       this.authService.getNoticia(this.id, this.path).subscribe(data =>{
         this.loading = false;
-        this.fromOng.setValue({
+        this.fromAbout.setValue({
           titulo: data.payload.data()['titulo'],
           descripcion: data.payload.data()['descripcion'],
         })

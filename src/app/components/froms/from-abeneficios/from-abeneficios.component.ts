@@ -4,16 +4,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'app/data/auth.service';
 import Swal from 'sweetalert2';
 
-
 @Component({
-  selector: 'app-from-about-us',
-  templateUrl: './from-about-us.component.html',
-  styleUrls: ['./from-about-us.component.css']
+  selector: 'app-from-abeneficios',
+  templateUrl: './from-abeneficios.component.html',
+  styleUrls: ['./from-abeneficios.component.css']
 })
-export class FromAboutUsComponent implements OnInit {
-
+export class FromAbeneficiosComponent implements OnInit {
  
-  fromOng: FormGroup;
+  fromServices: FormGroup;
   loading = false;
 
   id: string | null;
@@ -23,20 +21,30 @@ export class FromAboutUsComponent implements OnInit {
               private router: Router, 
               private aRouter: ActivatedRoute,) {
 
-                this.fromOng = this.fb.group({
+                this.fromServices = this.fb.group({
                   titulo: ['', Validators.required],
                   descripcion: ['', Validators.required],
                 })
                 this.id = this.aRouter.snapshot.paramMap.get('id'); 
               }
 
-              private  path ='fromAbout';
+              private  path ='beneficios';
 
   ngOnInit(): void {
     this.esEdit();
   }
 
   agregarEditarNoticia(){
+     
+    if(this.fromServices.invalid){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Todos los campos son necesarios, recuerda llenar toda la informacion, si no sabes que agregar pon (N/A) en el campo',
+      })
+      return;
+     }
+
     if(this.id === null){
       this.agregarNoticia();
     }else{
@@ -46,8 +54,8 @@ export class FromAboutUsComponent implements OnInit {
 
   agregarNoticia(){
     const valores: any = {
-      titulo: this.fromOng.value.titulo,
-      descripcion: this.fromOng.value.descripcion,
+      titulo: this.fromServices.value.titulo,
+      descripcion: this.fromServices.value.descripcion,
       fechacreacion: new Date().getTime(),
     }
 
@@ -58,7 +66,7 @@ export class FromAboutUsComponent implements OnInit {
         '',
         'success'
       )
-    this.router.navigate(['/about-us']); 
+    this.router.navigate(['/beneficios']); 
     return;   
     }).catch(error =>{
       
@@ -68,9 +76,10 @@ export class FromAboutUsComponent implements OnInit {
   }
 
   editarNoticia(id: string){
+
     const valores: any = {
-      titulo: this.fromOng.value.titulo,
-      descripcion: this.fromOng.value.descripcion,
+      titulo: this.fromServices.value.titulo,
+      descripcion: this.fromServices.value.descripcion,
     }
     this.loading = true;
     this.authService.actualizarNoticia(this.path, id, valores ).then(()=>{
@@ -81,7 +90,7 @@ export class FromAboutUsComponent implements OnInit {
         'success'
       )
     });
-     this.router.navigate(['/about-us']); 
+     this.router.navigate(['/beneficios']); 
   }
 
   esEdit(){
@@ -89,7 +98,7 @@ export class FromAboutUsComponent implements OnInit {
       this.loading = true;  
       this.authService.getNoticia(this.id, this.path).subscribe(data =>{
         this.loading = false;
-        this.fromOng.setValue({
+        this.fromServices.setValue({
           titulo: data.payload.data()['titulo'],
           descripcion: data.payload.data()['descripcion'],
         })

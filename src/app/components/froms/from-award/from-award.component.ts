@@ -7,22 +7,25 @@ import Swal from 'sweetalert2';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { FirestoresService } from 'app/data/firestores.service';
 
-import { FirestoresService } from '../../../data/firestores.service'
+
 
 @Component({
-  selector: 'app-from-home',
-  templateUrl: './from-home.component.html',
-  styleUrls: ['./from-home.component.css']
+  selector: 'app-from-award',
+  templateUrl: './from-award.component.html',
+  styleUrls: ['./from-award.component.css']
 })
-export class FromHomeComponent implements OnInit {
+export class FromAwardComponent implements OnInit {
 
-  crearNoticia: FormGroup;
+
+  fromCondecoracion: FormGroup;
   id: string | null;
 
   submitted = false; 
   loading = false;
-  
+  cargaimg = false;
+
   image$: Observable<any>;
  
 
@@ -33,16 +36,15 @@ export class FromHomeComponent implements OnInit {
               private angularFireStorage: AngularFireStorage,
               private firestoresService: FirestoresService) { 
 
-      this.crearNoticia = this.fb.group({
+      this.fromCondecoracion = this.fb.group({
         titulo: ['', Validators.required],
         imagen: ['', Validators.required],
-        video: ['', Validators.required],
         descripcion: ['', Validators.required]
       })
          this.id = this.aRouter.snapshot.paramMap.get('id'); 
     }
 
-    private  path ='noticias';
+    private  path ='condecoracion';
 
   ngOnInit(): void {
     this.esEdit();
@@ -58,12 +60,12 @@ export class FromHomeComponent implements OnInit {
 
   agregarNoticia(){
     const valores: any = {
-      titulo: this.crearNoticia.value.titulo,
-      imagen: this.crearNoticia.value.imagen,
-      descripcion: this.crearNoticia.value.descripcion,
-      video: this.crearNoticia.value.video,
+      titulo: this.fromCondecoracion.value.titulo,
+      imagen: this.fromCondecoracion.value.imagen,
+      descripcion: this.fromCondecoracion.value.descripcion,
       fechacreacion: new Date().getTime(),
     }
+
     this.loading = true;
     this.authService.agregarNoticias(valores, this.path).then(() => {
      Swal.fire(
@@ -71,22 +73,22 @@ export class FromHomeComponent implements OnInit {
         '',
         'success'
       )
-    this.router.navigate(['/home']); 
+    this.router.navigate(['/about-us']); 
     return;   
     }).catch(error =>{
-      
       console.log('Esto es un error');
     })
 
   }
 
+  
+
   editarNoticia(id: string){
 
     const valores: any = {
-      titulo: this.crearNoticia.value.titulo,
-      imagen: this.crearNoticia.value.imagen,
-      video: this.crearNoticia.value.video,
-      descripcion: this.crearNoticia.value.descripcion,
+      titulo: this.fromCondecoracion.value.titulo,
+      imagen: this.fromCondecoracion.value.imagen,
+      descripcion: this.fromCondecoracion.value.descripcion,
     }
 
     this.loading = true;
@@ -98,7 +100,7 @@ export class FromHomeComponent implements OnInit {
         'success'
       )
     });
-     this.router.navigate(['/home']); 
+     this.router.navigate(['/about-us']); 
   }
 
   esEdit(){
@@ -106,36 +108,42 @@ export class FromHomeComponent implements OnInit {
       this.loading = true;  
       this.authService.getNoticia(this.id, this.path).subscribe(data =>{
         this.loading = false;
-        this.crearNoticia.setValue({
+        this.fromCondecoracion.setValue({
           titulo: data.payload.data()['titulo'],
           imagen: data.payload.data()['imagen'],
-          video: data.payload.data()['video'],
           descripcion: data.payload.data()['descripcion'],
         })
       })
     }
   }
 
-  uploadFile(event){
-    this.loading = true;
+  async uploadFile(event){
+    this.cargaimg = true;
     const file = event.target.files[0];
     const name = event.target.files[0].name;
     const fileRef = this.angularFireStorage.ref(name); 
     const task = this.angularFireStorage.upload(name, file);
+    
 
     task.snapshotChanges()
     .pipe(
       finalize(() =>{
-       
+      
         this.image$ = fileRef.getDownloadURL();
         this.image$.subscribe(url =>{
           console.log('esta es la URL->', url);
-          this.crearNoticia.get('imagen').setValue(url);
-          this.loading = false;
+          this.fromCondecoracion.get('imagen').setValue(url);
+          this.cargaimg = false;
         })
       })
+      
     )
     .subscribe();
   }
+
+
+ 
+
+  
 
 }

@@ -12,7 +12,7 @@
                 <span *ngIf="submitted && registroFrom.invalid" class="badge badge-danger"> TODOS LOS CAMPOS SON OBLIGATORIOS</span>
             </div>
 
-        <form class="formulario" [formGroup]="fromOng" (ngSubmit)="agregarEditarNoticia()">
+        <form class="formulario" [formGroup]="fromEjes" (ngSubmit)="agregarEditarNoticia()">
                 <div class="row">
 
                     <div class="col-md-8">
@@ -34,7 +34,7 @@
                 <div class="row">        
                     <div class="btn-formulario">
                           <button type="submit" class="btn btn-primary btn-lg btn-fill" >
-                              Agregar Servicio
+                              Agregar
                                 <div *ngIf="loading" class="spinner-border float" role="status">
                                     <span class="sr-only">Cargando ...</span>    
                                 </div>
