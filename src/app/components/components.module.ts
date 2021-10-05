@@ -58,7 +58,9 @@ import { FromOngComponent } from './froms/from-ong/from-ong.component';
 import { FromEjesComponent } from './froms/from-ejes/from-ejes.component';
 import { FromActividadesComponent } from './froms/from-actividades/from-actividades.component';
 import { FromAbeneficiosComponent } from './froms/from-abeneficios/from-abeneficios.component';
-import { ErrorComponent } from './error/error.component';
+import { ErrordesarrolloComponent } from './errordesarrollo/errordesarrollo.component';
+
+
 
 
 @NgModule({
@@ -111,10 +113,7 @@ import { ErrorComponent } from './error/error.component';
         FromEjesComponent,
         FromActividadesComponent,
         FromAbeneficiosComponent,
-        ErrorComponent,
-        
- 
-
+        ErrordesarrolloComponent,
         
     ],
     entryComponents: [NgbdModalContent],

@@ -15,9 +15,10 @@
           </button>
         </div>
 
-        <table class="table" style="min-width:3000px;" id="excel-table" class="table table-striped table-bordered" >
+        <table class="table" style="min-width:4100px;" id="excel-table" class="table table-striped table-bordered" >
           <thead>
             <tr>
+              <th scope="col">#</th>
               <th scope="col">Fecha De Inscripcion</th>
               <th scope="col">Nombres & Apellidos</th>
               <th scope="col">Tipo Documento</th>
@@ -35,36 +36,53 @@
               <th scope="col">Regimen</th>
               <th scope="col">Profesión</th>
               <th scope="col">Area Voluntaria</th>
-              <th scope="col">Tine Pasaporte</th>
+              <th scope="col">Tiene Pasaporte</th>
               <th scope="col">RH</th>
+              <th scope="col">Estado</th>
               <th scope="col">Accion</th>
             </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let item of informacion | paginate: { itemsPerPage: 50, currentPage: paginacion}">
+          <tr *ngFor="let item of informacion | paginate: { itemsPerPage: 50, currentPage: paginacion}, index as id">
+              <td class="contador" >{{id+1}}</td>
               <td>{{item.fechaCreacion | date}}</td>
-              <td>{{item.nombres}} {{item.apellidos}}</td>
-              <td>{{item.tipodocumento}}: {{item.numerodocumento}}</td>
-              <td>{{item.sexo}}</td>
-              <td>{{item.correo}}</td>
-              <td>{{item.numerocelular}}</td>
-              <td>{{item.lugardeexpedicion}}</td>
-              <td>{{item.lugarnacimiento}}</td>
-              <td>{{item.fechanacimiento}}</td>
-              <td>{{item.direccion}}</td>
-              <td>{{item.departamento}}</td>
-              <td>{{item.ciudad}}</td>
-              <td>{{item.poblacion}}</td>
-              <td>{{item.eps}}</td>
-              <td>{{item.regimen}}</td>
-              <td>{{item.profesion}}</td>
-              <td>{{item.areavoluntaria}}</td>
-              <td>{{item.pasaporte}}</td>
-              <td>{{item.rh}}</td>
-              <td>
-                <a  [routerLink]="[ '/editFromVolunteers', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
-                <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a> 
-              </td>
+               <td>{{item.nombres}} {{item.apellidos}}</td>
+               <td>{{item.tipodocumento}}: {{item.numerodocumento}}</td>
+               <td>{{item.sexo}}</td>
+               <td>{{item.correo}}</td>
+               <td>{{item.numerocelular}}</td>
+               <td>{{item.lugardeexpedicion}}</td>
+               <td>{{item.lugarnacimiento}}</td>
+               <td>{{item.fechanacimiento}}</td>
+               <td>{{item.direccion}}</td>
+               <td>{{item.departamento}}</td>
+               <td>{{item.ciudad}}</td>
+               <td>{{item.poblacion}}</td>
+               <td>{{item.eps}}</td>
+               <td>{{item.regimen}}</td>
+               <td>{{item.profesion}}</td>
+               <td>{{item.areavoluntaria}}</td>
+               <td>{{item.pasaporte}}</td>
+               <td>{{item.rh}}</td>
+               <td> 
+                 <div *ngIf="item.estado ==='Suspendido'" class="alerta-campos">
+                   <span _ngcontent-bpv-c201="" class="badge badge-danger">{{item.estado}}</span>
+                 </div>
+ 
+                 <div *ngIf="item.estado ==='Activo'" class="alerta-campos">
+                   <span _ngcontent-bpv-c201="" class="badge badge-success">{{item.estado}}</span>
+                 </div>
+ 
+                 <div *ngIf="item.estado ==='Stand by'" class="alerta-campos">
+                   <span _ngcontent-bpv-c201="" class="badge badge-warning">{{item.estado}}</span>
+                 </div>
+               </td>
+               <td>
+                 <a  [routerLink]="[ '/editFromVolunteers', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/30/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
+                 <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/40/000000/delete.png"/></a> 
+               </td>
+
+
             </tr>
           </tbody>
           <pagination-controls (pageChange)="paginacion  = $event"></pagination-controls>

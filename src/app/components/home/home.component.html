@@ -208,9 +208,12 @@
 
 </div> 
 
-<div class="btn-fromHome" *ngIf="user$ | async as user; else home">    
+<div class="btn-fromHome" *ngIf="user$ | async as user">    
     <a class="btn-mas" href="/#/table-volunteers"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-bullet-list-67"> </li></button></a>
     <div class="ubicate-button">
         <a class="btn-mas" href="/#/from-home"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
     </div>
 </div>
+
+
+

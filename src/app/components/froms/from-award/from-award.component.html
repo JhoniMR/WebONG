@@ -9,9 +9,7 @@
                      <!--   <div class="logo-formulario">
                             <img  src="../../../assets/logo/logo_negro.png" width="20%"  alt="">
                         </div>  -->
-                        <div class="alerta-campos">
-                            <span *ngIf="submitted && crearNoticia.invalid" class="badge badge-danger"> TODOS LOS CAMPOS SON OBLIGATORIOS</span>
-                        </div>
+  
 
                         <form [formGroup]="fromCondecoracion" (ngSubmit)="agregarEditarNoticia()" >
                             <div class="row">

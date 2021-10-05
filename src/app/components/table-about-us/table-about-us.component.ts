@@ -8,6 +8,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./table-about-us.component.css']
 })
 export class TableAboutUsComponent implements OnInit {
+
+  paginacion: number = 1;
   
   informacion: any[] = [];
   constructor(private authService: AuthService) { }

@@ -35,15 +35,15 @@ import { FromOngComponent } from './components/froms/from-ong/from-ong.component
 import { FromEjesComponent } from './components/froms/from-ejes/from-ejes.component';
 import { FromActividadesComponent } from './components/froms/from-actividades/from-actividades.component';
 import { FromAbeneficiosComponent } from './components/froms/from-abeneficios/from-abeneficios.component';
+import { ErrordesarrolloComponent } from './components/errordesarrollo/errordesarrollo.component';
 
 
-import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-
-    { path: '404',             component: ErrorComponent},
+  
+    { path: '404',             component: ErrordesarrolloComponent},
     { path: 'inicio',             component: ComponentsComponent},
     
     { path: 'login',              component: LoginComponent, canActivate:[GuardLoginGuard] },

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'app/data/auth.service';
+import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,12 +12,16 @@ import Swal from 'sweetalert2';
 })
 export class FromVolunteersComponent implements OnInit {
 
+  public user$: Observable<any> = this.authService.afAuth.user;
+
   private  path ='voluntarios';
   registroFrom: FormGroup;
   id: string | null;
 
   submitted = false; 
   loading = false;
+
+  
 
   constructor(private fb: FormBuilder, private authService: AuthService,
     private router: Router, private aRouter: ActivatedRoute) { 
@@ -43,6 +48,7 @@ export class FromVolunteersComponent implements OnInit {
         areavoluntaria: ['', Validators.required],
         pasaporte: ['', Validators.required],
         rh: ['', Validators.required],
+        estado: [''],
       })
       this.id = this.aRouter.snapshot.paramMap.get('id'); 
     }
@@ -94,6 +100,7 @@ export class FromVolunteersComponent implements OnInit {
     areavoluntaria: this.registroFrom.value.areavoluntaria,
     pasaporte: this.registroFrom.value.pasaporte,
     rh: this.registroFrom.value.rh,
+    estado: this.registroFrom.value.estado,
     fechaCreacion: new Date().getTime(),
   }
 
@@ -137,6 +144,7 @@ export class FromVolunteersComponent implements OnInit {
       areavoluntaria: this.registroFrom.value.areavoluntaria,
       pasaporte: this.registroFrom.value.pasaporte,
       rh: this.registroFrom.value.rh,
+      estado: this.registroFrom.value.estado,
     }
 
     this.loading = true;
@@ -179,6 +187,8 @@ export class FromVolunteersComponent implements OnInit {
           areavoluntaria: data.payload.data()['areavoluntaria'],
           pasaporte: data.payload.data()['pasaporte'],
           rh: data.payload.data()['rh'],
+          estado: data.payload.data()['estado'],
+          
         });
       });
 
