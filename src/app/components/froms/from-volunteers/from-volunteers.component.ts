@@ -116,9 +116,8 @@ export class FromVolunteersComponent implements OnInit {
   }).catch(error =>{
     
     console.log('Esto es un error');
-  })
-   
-  }  
+  })   
+}  
 
 
   editarNoticiaq(id: string){

@@ -82,7 +82,6 @@
                  <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/40/000000/delete.png"/></a> 
                </td>
 
-
             </tr>
           </tbody>
           <pagination-controls (pageChange)="paginacion  = $event"></pagination-controls>
@@ -90,6 +89,9 @@
         
         <button (click)="exportexcel()" type="button" class="btn btn-primary btn-lg" style="margin: auto;">Descargar</button>        
        </div>
+    </div>
+    <div class="pagos">    
+      <a class="pagosvuluntarios" href="/#/tablapayments"> <button type="button" class="btn btn-success btn-round"><img src="https://img.icons8.com/material-sharp/24/000000/love-for-money.png"/></button></a>
     </div>
   </div>
 </div> 

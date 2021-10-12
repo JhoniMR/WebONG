@@ -59,6 +59,8 @@ import { FromEjesComponent } from './froms/from-ejes/from-ejes.component';
 import { FromActividadesComponent } from './froms/from-actividades/from-actividades.component';
 import { FromAbeneficiosComponent } from './froms/from-abeneficios/from-abeneficios.component';
 import { ErrordesarrolloComponent } from './errordesarrollo/errordesarrollo.component';
+import { FromVoluntarypaymentsComponent } from './froms/from-voluntarypayments/from-voluntarypayments.component';
+import { TablaPagosComponent } from './tabla-pagos/tabla-pagos.component';
 
 
 
@@ -114,6 +116,8 @@ import { ErrordesarrolloComponent } from './errordesarrollo/errordesarrollo.comp
         FromActividadesComponent,
         FromAbeneficiosComponent,
         ErrordesarrolloComponent,
+        FromVoluntarypaymentsComponent,
+        TablaPagosComponent,
         
     ],
     entryComponents: [NgbdModalContent],

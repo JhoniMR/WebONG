@@ -49,7 +49,7 @@
                           <a class="nav-link" style="color: #6d6b6a;" class="nav-link nc-icon nc-single-02"  ngbDropdownToggle> Admin</a>
                           <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-primary">
                               <a class="dropdown-item">{{user?.email}}</a>
-                              <a class="dropdown-item"(click)="refresh()" (click)="onLogout()">Salir</a>
+                              <a class="dropdown-item"(click)="refresh()" routerLink="#/home" (click)="onLogout()">Salir</a>
                           </div>
                       </div>
                   </li>

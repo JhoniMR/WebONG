@@ -36,8 +36,8 @@ import { FromEjesComponent } from './components/froms/from-ejes/from-ejes.compon
 import { FromActividadesComponent } from './components/froms/from-actividades/from-actividades.component';
 import { FromAbeneficiosComponent } from './components/froms/from-abeneficios/from-abeneficios.component';
 import { ErrordesarrolloComponent } from './components/errordesarrollo/errordesarrollo.component';
-
-
+import { FromVoluntarypaymentsComponent } from './components/froms/from-voluntarypayments/from-voluntarypayments.component';
+import { TablaPagosComponent } from './components/tabla-pagos/tabla-pagos.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -58,7 +58,12 @@ const routes: Routes =[
     
     { path: 'from-home',        component: FromHomeComponent, canActivate:[AngularFireAuthGuard]},
     { path: 'editFrom/:id',     component: FromHomeComponent,  canActivate:[AngularFireAuthGuard]},
+
     { path: 'from-volunteers',  component: FromVolunteersComponent},
+    { path: 'from-volunteerspayments',  component: FromVoluntarypaymentsComponent},
+    { path: 'tablapayments',  component: TablaPagosComponent, canActivate:[AngularFireAuthGuard]},
+    
+    
 
     { path: 'from-services',    component: FromServicesComponent, canActivate:[AngularFireAuthGuard]},
     { path: 'from-services/:id',    component: FromServicesComponent, canActivate:[AngularFireAuthGuard]},
@@ -88,7 +93,7 @@ const routes: Routes =[
     { path: 'table-about',              component: TableAboutUsComponent, canActivate:[AngularFireAuthGuard] },
     { path: 'editFromVolunteers/:id',   component: FromVolunteersComponent, canActivate:[AngularFireAuthGuard] },
 
-
+    
    
     { path: 'inicio',           component: ComponentsComponent },
     { path: 'user-profile',     component: ProfileComponent },

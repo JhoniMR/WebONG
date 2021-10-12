@@ -1,0 +1,118 @@
+
+<div class="main">
+    <div class="section text-center">
+      <div class="row">
+    <div class="card" style="width: 60rem; margin: auto; margin-top: 90px; ">
+        <div class="card-body">
+         <!-- <div class="title-brand title-center">
+            <img src="../../../../assets/logo/logo_negro.png" width="18%" alt="">
+          </div>-->
+
+            <div class="alerta-campos">
+                <span *ngIf="submitted && registroFrom.invalid" class="badge badge-danger"> TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+            </div>
+
+        <form  id="contactForm" class="formulario" [formGroup]="pagoFrom" (ngSubmit)="agregarEditarNoticia()">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <label>Nombres</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="nombres" type="text" class="form-control" placeholder="Nombres"   >
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Apellidos</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="apellidos" type="text" class="form-control" placeholder="Apellidos"  >
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Correo</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="correo" type="text" class="form-control" placeholder="Ingrese su correo"   >
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <label>Numero telefonico</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><img src="https://img.icons8.com/ios/20/000000/phone.png"/></span>
+                          </div>
+                         <input formControlName ="numerocelular" type="number" class="form-control" placeholder="Numero de telefono"   >
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Tipo documento</label>
+                                 <select formControlName ="tipodocumento" class="form-control" id="exampleFormControlSelect1">
+                                    <option>CC</option>
+                                    <option>TI</option>
+                                    <option>CE</option>
+                                    <option>NUIP</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Numero cedula</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-badge"></i></span>
+                          </div>
+                         <input formControlName ="cedula" type="number" class="form-control" placeholder="Numero de telefono"   >
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Agregar soporte de pago</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">  <i class="nc-icon nc-album-2"></i></span>
+                              <div *ngIf="loading" class="spinner-border float" role="status">
+                                <span class="sr-only">Cargando ...</span>    
+                             </div>
+                            </div>
+                                <input  type="file" (change)="uploadFile($event)" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12" style="margin-top: 12px;">
+                      <h2  class="display-2 fw-bolder">PLAZOS</h2>
+                         <p style="text-align: justify; font-size: 15px;" class="lead">
+                          Usted cuenta con 48 horas corrientes a partir de este momento para poder realizar el pago y activar el formulario, recuerde que debe enviar el comprobante al whatsapp 3054350666 y esperar la llamada para la entrevista.
+                        </p>
+                    </div>
+    
+                </div> 
+                <div class="row">        
+                    <div class="btn-formulario">
+                          <button type="submit" class="btn btn-primary btn-lg btn-fill" >
+                              Agregar Reporte
+                                <div *ngIf="loading" class="spinner-border float" role="status">
+                                    <span class="sr-only">Cargando ...</span>    
+                                </div>
+                            </button>
+                    </div>  
+                </div>
+        </form>
+        </div>
+    </div>
+        </div>
+  </div> 
+</div>

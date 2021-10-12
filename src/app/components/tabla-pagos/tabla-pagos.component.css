@@ -1,0 +1,73 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+  
+  .section{
+    background: #283c86;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #45a247, #283c86);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #45a247, #283c86); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+  
+    }
+
+.card {
+    margin: auto;
+}
+
+.author{
+  width: 20%;
+  margin: auto;
+}
+
+.card button{
+  position: absolute;
+  left: 34%;
+  top: 90%;
+  max-width: 100%;
+}
+
+h5.card-title {
+  font-size: 17px;
+}
+
+h6.card-subtitle.mb-2.text-muted {
+  font-size: 12px;
+  margin-top: -12px;
+}
+
+p.card-text {
+  margin-top: 30px;
+}
+
+pagination-controls {
+  color: white;
+}
+
+.paguinacion{
+  margin-top: 30px;
+}
+
+img.card-img-top {
+    height: 351px;
+    width: 320px;
+    object-fit: cover;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+h5 {
+    text-align: initial;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin-top: -9px;
+}
+a.verpago {
+    position: absolute;
+    top: 70%;
+    left: 89%;
+    color: black;
+    font-size: 20px;
+}
+  
+ 

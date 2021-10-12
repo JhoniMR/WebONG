@@ -10,7 +10,6 @@ background-repeat: no-repeat;
   margin-top: 126px;
 }
 .card{
-  
   width: 80%;
   padding: 30px;
 }
@@ -28,4 +27,8 @@ label {
   margin-top: 40px;
 }
 
-
+a.pagosvuluntarios {
+  position: fixed;
+  left: 94%;
+  top: 90%;
+}

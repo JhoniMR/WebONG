@@ -61,3 +61,10 @@ td{
 td.contador {
   font-weight: bold;
 }
+
+a.pagosvuluntarios {
+  position: fixed;
+  left: 94%;
+  top: 90%;
+  z-index: 1;
+}

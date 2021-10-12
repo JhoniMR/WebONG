@@ -34,7 +34,7 @@
                         <div class="timeline-image"><img class="logo-circulo"  src="../../../../assets/logo/logo_ong.png" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="iconos" *ngIf="user$ | async as user; else botones">
-                                <a  [routerLink]="[ '/from-ong', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
+                                <a  [routerLink]="[ '/from-ejes', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
                                 <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>
                               </div>
                             <div class="timeline-heading">
