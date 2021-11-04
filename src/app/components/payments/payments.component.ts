@@ -1,27 +1,33 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
-declare var paypal;
+import Swal from 'sweetalert2';
+
+
+
+declare var paypal; 
 
 @Component({
   selector: 'app-payments',
   templateUrl: './payments.component.html',
-  styleUrls: ['./payments.component.css']
+  styleUrls: ['./payments.component.css'],
+  
 })
 export class PaymentsComponent implements OnInit {
 
-  @ViewChild('paypal', {static: true}) paypalElement: ElementRef;
+  valor;
 
-  producto ={
-    descripcion: 'no lo se',
-    precio: 19.99,
-    img: 'img aqui'
+ @ViewChild('paypal', {static: true}) paypalElement: ElementRef;
+
+ producto ={
+    descripcion: 'Donación para la Fundación Meta Visible',
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-
-   /* paypal
+ 
+    paypal
     .Buttons({
       createOrder: (data, actions) =>{
         return actions.order.create({
@@ -29,7 +35,7 @@ export class PaymentsComponent implements OnInit {
             discripcion: this.producto.descripcion,
               amount:{
                 currency_code: 'USD',
-                value: this.producto.precio
+                value: this.valor
               }
           }]
         })
@@ -37,15 +43,21 @@ export class PaymentsComponent implements OnInit {
           onApprove: async (data, actions) =>{
             const order = await actions.order.capture();
             console.log(order);
+            Swal.fire(
+              'La donacion a sido exitosa !!',
+              '',
+              'success'
+            )
+            this.router.navigate(['/home']); 
           },
             onError: err =>{
-              console.log(err);
+              console.log('Este es el error ->',err);
             }
 
-    }).render(this.paypalElement.nativeElement);*/
-
+    }).render(this.paypalElement.nativeElement);
+  
   }
- 
+
   nofunciona = false;
 
   fueraDeSerrvicio(){

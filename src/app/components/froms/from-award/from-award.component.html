@@ -6,11 +6,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 mr-auto ml-auto">
-                     <!--   <div class="logo-formulario">
-                            <img  src="../../../assets/logo/logo_negro.png" width="20%"  alt="">
-                        </div>  -->
-  
-
+                        <div class="logo-formulario">
+                            <img  src="https://firebasestorage.googleapis.com/v0/b/webong-3ccda.appspot.com/o/Logo%2Flogo_negro.png?alt=media&token=5b0e58ea-3f99-4342-ba36-13e237382c61" width="20%"  alt="">
+                        </div> 
                         <form [formGroup]="fromCondecoracion" (ngSubmit)="agregarEditarNoticia()" >
                             <div class="row">
                                 <div class="col-md-6">
@@ -37,7 +35,7 @@
 
                             </div>
                             <label>Message</label>
-                                <textarea style="height: 200px;" formControlName ="descripcion" appearance="fill"  matInput #message maxlength="3000" class="form-control" type="text" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                                <textarea id="my-text" formControlName ="descripcion" appearance="fill"  matInput #message maxlength="3000" class="form-control" type="text" placeholder="Agrega una descripción" required></textarea>
                                 <mat-hint align="end">{{message.value.length}} / 3000</mat-hint>
                                <div class="row">
                             

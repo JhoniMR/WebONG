@@ -4,15 +4,13 @@
       <div class="row">
     <div class="card" style="width: 60rem; margin: auto; margin-top: 90px; ">
         <div class="card-body">
-          <!--<div class="title-brand title-center">
-            <img src="../../../../assets/logo/logo_negro.png" width="18%" alt="">
-          </div>-->
-
-
+          <div class="logo-formulario">
+            <img  src="https://firebasestorage.googleapis.com/v0/b/webong-3ccda.appspot.com/o/Logo%2Flogo_negro.png?alt=media&token=5b0e58ea-3f99-4342-ba36-13e237382c61" width="20%"  alt="">
+        </div> 
         <form class="formulario" [formGroup]="fromServices" (ngSubmit)="agregarEditarNoticia()">
                 <div class="row">
 
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <label>Titulo</label>
                         <div class="input-group" >
                           <div class="input-group-prepend">
@@ -24,7 +22,7 @@
 
                     <div class="col-md-12">
                         <label>Descripción</label>
-                        <textarea formControlName ="descripcion" class="form-control" placeholder="Deja un comentario aqui" id="floatingTextarea2" style="height: 150px"></textarea>
+                        <textarea id="my-text" formControlName ="descripcion" class="form-control" placeholder="Agrega una descripción" required></textarea>
                     </div>
 
                 </div> 

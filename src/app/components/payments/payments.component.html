@@ -3,76 +3,66 @@
     <div class="section text-center">
       <div class="row" >
 
-        <!--METODO DE PAGO PAYPAL-->
-
+        <!--METODO DE PAGO PAYPAL
         <div  class="col-md-4">
-          <div class="card"  style="width: 18rem; margin-top: 100px; height: 90%;">
+          <div class="card"  style="width: 30rem; margin-top: 100px; height: 90%;">
             <img src="https://img.icons8.com/color/100/000000/paypal.png"/>
             <div class="card-body">
-              <div class="col-md-12" style="margin-top: 12px;">
-                <h2  class="display-2 fw-bolder">Dona sin limites</h2>              
-              </div>
               
-                <div class="Paypal">
-                  <a href="https://www.paypal.com/donate?hosted_button_id=VCW8TRAH3ARFN">
-                    <button  type="button" class="btn btn-outline-primary">Dona</button> 
-                  </a>
-                </div>
-            
+              <div class="row"> 
+                <div class="col-md-12">
+                  <label>Ingrese el valor de la donación</label>
+                  <label>Recuerde que el valor ingresado debe ser en dólares, no importa de que país estés haciendo la donación</label>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="nc-icon nc-favourite-28"></i></span>
+                    <input [(ngModel)]="valor" type="number" class="form-control" placeholder="1.00">
+                    <span class="input-group-text">.00</span>
+                  </div>
+                  <p>{{ valor | currency: 'USD'}}</p>
+              </div>
+              </div>
+                <div #paypal></div>
             </div>
           </div>
         </div>
+        
+        -->
 
-         <!--METODO DE PAGO BANCOLOMBIA-->
-
-        <div  class="col-md-4">
-          <div class="card"  style="width: 18rem; margin-top: 100px; height: 90%;">
+        <!--METODO DE PAGO BANCOLOMBIA -->
+        <div  class="col-md-4 centrar-card">
+          <div class="card"  style="width: 22rem; margin-top: 30px; height: 100%;">
             <div *ngIf="nofunciona" class="alerta-campos"><span _ngcontent-bpv-c201="" class="badge badge-danger">Fuera de servicio</span>
             </div>
             <img style="width: 60%; margin-top: 60px;" src="../../../assets/payments/logo-bancolombia+(1).png"/>
             <div class="card-body">
               <div class="col-md-12" style="margin-top: 12px;">
-                <h2  class="display-2 fw-bolder" style="margin-top: 32px;" >Dona sin limites</h2>
+                <p style="text-align: justify;">El exitó en la vida no se mide por lo que logras si mo por los obstaculos que superas.</p>
                    <p  class="lead">
-                    <img class="qrBancolombia" src="../../../assets/qrs/bancolombia_wompi.PNG" alt="">
+                    <img class="qrBancolombia" src="../../../assets/qrs/bancolombia.jpeg" alt="">
                   </p>
               </div>
-                <button (click)="fueraDeSerrvicio()" type="button" class="btn btn-outline-primary">Dona</button> 
             </div>
           </div>
-        </div>
+        </div> 
 
-        <!--METODO DE PAGO NEQUI-->
+        <!--METODO DE PAGO NEQUI
 
-        <div  class="col-md-4">
-          <div class="card"  style="width: 18rem; margin-top: 100px; height: 90%;">
+        <div  class="col-md-4 centrar-card">
+          <div class="card"  style="width: 19rem; margin-top: 80px; height: 90%;">
             <img style="width: 40%; " src="../../../assets/payments/nequi.png"/>
             <div class="card-body">
               <div class="col-md-12" style="margin-top: 12px;">
-                <h2  class="display-2 fw-bolder">Dona sin limites</h2>
+                <p style="text-align: justify;">El exito llega para todos aquellos que están ocupados buscandolo. 'Henny Thonea'</p>
                 <p class="lead">
                   <img class="qrNequi" src="../../../assets/qrs/nequi.png" alt="">
                 </p>
               </div>
-            <!--  <a href="">
-                <button type="button" class="btn btn-outline-primary">Donar</button> 
-              </a> -->
+          
             </div>
           </div>
-        </div>
+        </div> -->
 
-
-
-
- 
-
-
-
-
-
-     
         </div>
    </div> 
 </div>
-
 

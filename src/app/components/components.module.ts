@@ -61,6 +61,8 @@ import { FromAbeneficiosComponent } from './froms/from-abeneficios/from-abenefic
 import { ErrordesarrolloComponent } from './errordesarrollo/errordesarrollo.component';
 import { FromVoluntarypaymentsComponent } from './froms/from-voluntarypayments/from-voluntarypayments.component';
 import { TablaPagosComponent } from './tabla-pagos/tabla-pagos.component';
+import { FromchatComponent } from './froms/fromchat/fromchat.component';
+import { EventsComponent } from './events/events.component';
 
 
 
@@ -118,6 +120,8 @@ import { TablaPagosComponent } from './tabla-pagos/tabla-pagos.component';
         ErrordesarrolloComponent,
         FromVoluntarypaymentsComponent,
         TablaPagosComponent,
+        FromchatComponent,
+        EventsComponent,
         
     ],
     entryComponents: [NgbdModalContent],

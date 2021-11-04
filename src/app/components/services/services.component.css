@@ -1,17 +1,12 @@
 /* CONTENIDO DEL TEXTO */
-
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-.sinColor {
-  background: #f0ffff00;
-  border: none;
-}
-
-textarea#floatingTextarea2 {
+.descripcion-texto{
   font-family: 'Poppins', sans-serif;
-  text-align: justify;
+  text-align: justify; 
+  white-space: pre-wrap;
   font-size: 16px;
 }
+
 /*  FIN DEL CONTENIDO */
 .btn-fromHome{
   text-align: end;
@@ -26,9 +21,7 @@ textarea#floatingTextarea2 {
   top: 85%;
   right: 0;
 }
-html {
-    scroll-behavior: smooth;
-}
+
 .title{
     text-align: center;
     font-size: 40px;
@@ -134,10 +127,7 @@ body {
     padding-bottom: 10px;
   }
   
-  .resume .resume-item:last-child {
-    padding-bottom: 0;
-  }
-  
+
   .resume .resume-item::before {
     content: "";
     position: absolute;

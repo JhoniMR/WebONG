@@ -6,9 +6,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 mr-auto ml-auto">
-                    <!--    <div class="logo-formulario">
-                            <img  src="../../../assets/logo/logo_negro.png" width="20%"  alt="">
-                        </div> -->
+                      <div class="logo-formulario">
+                            <img  src="https://firebasestorage.googleapis.com/v0/b/webong-3ccda.appspot.com/o/Logo%2Flogo_negro.png?alt=media&token=5b0e58ea-3f99-4342-ba36-13e237382c61" width="20%"  alt="">
+                        </div> 
                         <div class="alerta-campos">
                             <span *ngIf="submitted && crearNoticia.invalid" class="badge badge-danger"> TODOS LOS CAMPOS SON OBLIGATORIOS</span>
                         </div>
@@ -46,13 +46,13 @@
                                     </div>
                                 </div>
                             </div>
+
                             <label>Message</label>
-                                <textarea formControlName ="descripcion" appearance="fill"  matInput #message maxlength="3000" class="form-control" type="text" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                                <textarea formControlName ="descripcion" appearance="fill"  matInput #message maxlength="3000" class="form-control" type="text" placeholder="Agrega una descripción" id="my-text" required></textarea>
                                 <mat-hint align="end">{{message.value.length}} / 3000</mat-hint>
                                <div class="row">
-                            
+  
                             <div class="btn-formulario">
-                                     
                                   <button type="submit" class="btn btn-danger btn-lg btn-fill" >
                                       Agregar Reporte
                                       <div *ngIf="loading" class="spinner-border float" role="status">
@@ -63,8 +63,6 @@
                                 
                             </div>
                         </form>
-
-         
                     </div>
                 </div>
             </div>

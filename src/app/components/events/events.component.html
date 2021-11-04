@@ -1,0 +1,43 @@
+<div class="main">
+    <div class="section text-center">
+      <div class="container">
+        <div  class="row" >      
+                <div *ngFor="let item of informacion | paginate: { itemsPerPage: 9, currentPage: paginacion}"  class="col-md-6"> 
+                    <div  class="card" style="width: 33rem; height: 450px; margin-top: 100px;">
+                        <div  class="card-body">
+                          <div class="unirme">
+                            <a [href]="item.link"><span class="badge badge-primary">UNIRME AL GRUPO</span></a>
+                          </div>
+                          <h5 class="card-title">{{item.titulo}}</h5>
+                          <div class="fecha-hora">
+                            <p class="fecha"> Hora: {{item.hora}} {{item.jornada}} - Fecha: {{item.fecha}}</p>
+                          </div>
+                           <p class="lugar">Lugar: {{item.lugar}}</p> 
+                          <div>
+                           <p class="code">Code: {{item.code}}</p>
+                          </div>
+                          <p class="card-text" style="text-align: justify;">{{item.descripcion}}</p>
+                        </div>
+
+                       <div class="editar-eliminar">
+                        <a  [routerLink]="[ '/fromchat', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
+                        <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>  
+                       </div>
+
+                    </div>
+                </div>
+             <div class="paguinacion">
+               <pagination-controls (pageChange)="paginacion  = $event"></pagination-controls>
+             </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  
+  
+  
+       
+            
+  
+  
+  

@@ -1,37 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AuthService } from 'app/data/auth.service';
-import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-events',
+  templateUrl: './events.component.html',
+  styleUrls: ['./events.component.css']
 })
-export class HomeComponent implements OnInit {
-
-
-  safeUrl: string ;
-
-  public user$: Observable<any> = this.authService.afAuth.user;
-
-  public noMostrar: any;
-  public isLogged = false;
+export class EventsComponent implements OnInit {
 
   informacion: any[] = [];
+  public isLogged = false;
 
   constructor( private santizer: DomSanitizer, private authService: AuthService) { }
   ngOnInit(): void {
- 
-    const tag = document.createElement('script');
-  	tag.src = "https://www.youtube.com/iframe_api";
-  	document.body.appendChild(tag);
     this.getMostrar(this.path);
   }
-
   
-  private  path ='noticias';
+  private  path ='eventos';
 
   /* RECORRE LA BASE DE DATOS DE FIREBASE Y ME TRAE LA INF Y SU ID*/   
   getMostrar( path: string){
@@ -43,6 +30,7 @@ export class HomeComponent implements OnInit {
             ...element.payload.doc.data()
           })
         });
+        console.log(this.informacion);
 
         if(this.informacion === null){
           this.isLogged = false;
@@ -51,7 +39,7 @@ export class HomeComponent implements OnInit {
           this.isLogged = true;
           return
         }
-        console.log(this.informacion);
+       
     });
   }
 

@@ -33,9 +33,29 @@ export class FromOngComponent implements OnInit {
 
   ngOnInit(): void {
     this.esEdit();
+    this.textarea();
+  }
+
+  textarea(){
+    const myText = document.getElementById("my-text");
+          myText.style.cssText = `height: ${myText.scrollHeight}px; overflow-y: hidden`;
+          
+          myText.addEventListener("input", function(){
+            this.style.height = "auto";
+            this.style.height = `${this.scrollHeight}px`;
+          });
   }
 
   agregarEditarNoticia(){
+    if(this.fromAbout.invalid){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Todos los campos son necesarios, recuerda llenar toda la informacion.',
+      })
+      return;
+     }
+
     if(this.id === null){
       this.agregarNoticia();
     }else{

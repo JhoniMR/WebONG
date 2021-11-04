@@ -1,0 +1,54 @@
+.section{
+  background: #283c86;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #45a247, #283c86);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #45a247, #283c86); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.contenedorFormulario{
+  margin-top: 126px;
+}
+.card{
+  width: 80%;
+  padding: 30px;
+}
+
+.content-center{
+  text-align: center;
+}
+
+label {
+  margin-top: 20px;
+}
+
+.btn-formulario{
+  margin: auto;
+  margin-top: 40px;
+}
+
+a.pagosvuluntarios {
+  position: fixed;
+  left: 94%;
+  top: 90%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+textarea {
+  font-family: 'Poppins', sans-serif;
+  text-align: justify;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+}
+
+textarea:is(:focus, :valid){
+  border-color: #6bd098;
+  border-width: 2px;
+}
+
+textarea::-webkit-scrollbar{
+    width: 0px;
+    height: auto;
+}

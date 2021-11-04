@@ -1,15 +1,10 @@
 /* CONTENIDO DEL TEXTO */
 
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-.sinColor {
-  background: #f0ffff00;
-  border: none;
-}
-
-textarea#floatingTextarea2 {
+.descripcion-texto{
   font-family: 'Poppins', sans-serif;
-  text-align: justify;
+  text-align: justify; 
+  white-space: pre-wrap;
   font-size: 16px;
 }
 /*  FIN DEL CONTENIDO */

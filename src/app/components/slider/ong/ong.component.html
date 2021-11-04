@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <div class="page-header section-dark" style="background-image: url('assets/img/antoine-barres.jpg')">
         <div class="filter"></div>
         <div class="content-center">
@@ -25,8 +24,9 @@
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">NUESTRA ONG</h2>
+                    <h2>NUESTRA ONG</h2>
                 </div>
+
                 <br><br> <br>
 
                 <ul class="timeline">
@@ -40,26 +40,19 @@
                             <div class="timeline-heading">
                                 <h4 class="subheading">{{item.titulo}}</h4>
                             </div>
-                            <div style="text-align: justify;" class="form-floating">
-                                <textarea  class="form-control sinColor" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 430px" disabled>{{item.descripcion}}</textarea>
+                            <div class="form-floating">
+                                <p class="descripcion-texto" id="floatingTextarea2" >{{item.descripcion}}</p>
                              </div>
                         </div>
                     </li> 
                 </ul>
 
                 <div class="btn-fromHome" *ngIf="user$ | async as user">    
-                        <div class="ubicate-button">
-                          <a class="btn-mas" href="/#/from-ong"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
-                        </div>
+                    <div class="ubicate-button">
+                        <a class="btn-mas" href="/#/from-ong"> <button type="button" class="btn btn-success btn-round"><li class="nc-icon nc-simple-add"> </li></button></a>
+                    </div>
                 </div>
             </div>
         </section>
-
-    
     </div>
-
-
-
-
-
 </html>

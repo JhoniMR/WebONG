@@ -21,6 +21,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
 
 
 import { environment } from 'environments/environment';
+import { CurrencyPipe} from '@angular/common';
+
+
 
 
 @NgModule({
@@ -48,7 +51,7 @@ import { environment } from 'environments/environment';
 
   
   ],
-  providers: [],
+  providers: [CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

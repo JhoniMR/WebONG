@@ -1,0 +1,107 @@
+
+<div class="main">
+    <div class="section text-center">
+      <div class="row">
+    <div class="card" style="width: 60rem; margin: auto; margin-top: 90px; ">
+        <div class="card-body">
+            <div class="alerta-campos">
+                <span *ngIf="submitted && registroFrom.invalid" class="badge badge-danger"> TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+            </div>
+
+        <form class="formulario" [formGroup]="fromChat" (ngSubmit)="agregarEditarNoticia()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Titulo</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="titulo" type="text" class="form-control" placeholder="Titulo">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Link del grupo</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="link" type="text" class="form-control" placeholder="Agregar el link de WhatsApp">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label>Descripción</label>
+                        <textarea id="my-text" formControlName ="descripcion" class="form-control" placeholder="Agrega una descripción" required></textarea>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label>Fecha</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="fecha" type="date" class="form-control" placeholder="1:00"   >
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label>Hora de inicio</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="hora" type="text" class="form-control" placeholder="1:00"   >
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Jornada</label>
+                                 <select formControlName ="jornada" class="form-control" id="exampleFormControlSelect1">
+                                    <option>AM</option>
+                                    <option>PM</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <label>Lugar de reunión</label>
+                        <div class="input-group" >
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                          </div>
+                         <input formControlName ="lugar" type="text" class="form-control" placeholder="Lugar de reunión">
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                      <label>Codigo de acceso</label>
+                      <div class="input-group" >
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+                        </div>
+                       <input formControlName ="code" type="text" class="form-control" placeholder="8xpm12">
+                      </div>
+                  </div>
+                  
+                </div> 
+                <div class="row">        
+                    <div class="btn-formulario">
+                          <button type="submit" class="btn btn-primary btn-lg btn-fill" >
+                              Agregar Reporte
+                                <div *ngIf="loading" class="spinner-border float" role="status">
+                                    <span class="sr-only">Cargando ...</span>    
+                                </div>
+                            </button>
+                    </div>  
+                </div>
+        </form>
+        </div>
+     </div>
+    </div>
+    <div class="pagos">    
+      <a class="pagosvuluntarios" href="/#/from-volunteerspayments"> <button type="button" class="btn btn-success btn-round"><img src="https://img.icons8.com/material-sharp/24/000000/love-for-money.png"/></button></a>
+    </div>
+  </div> 
+</div>

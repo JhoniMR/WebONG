@@ -9,6 +9,7 @@ import { finalize } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 import { FirestoresService } from '../../../data/firestores.service'
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-from-home',
@@ -30,13 +31,12 @@ export class FromHomeComponent implements OnInit {
               private authService: AuthService,
               private router: Router,   
               private aRouter: ActivatedRoute,
-              private angularFireStorage: AngularFireStorage,
-              private firestoresService: FirestoresService) { 
+              private angularFireStorage: AngularFireStorage) { 
 
       this.crearNoticia = this.fb.group({
         titulo: ['', Validators.required],
         imagen: ['', Validators.required],
-        video: ['', Validators.required],
+        video: [''],
         descripcion: ['', Validators.required]
       })
          this.id = this.aRouter.snapshot.paramMap.get('id'); 
@@ -45,10 +45,31 @@ export class FromHomeComponent implements OnInit {
     private  path ='noticias';
 
   ngOnInit(): void {
+    this.textarea();
     this.esEdit();
   }
 
+  textarea(){
+    const myText = document.getElementById("my-text");
+          myText.style.cssText = `height: ${myText.scrollHeight}px; overflow-y: hidden`;
+          
+          myText.addEventListener("input", function(){
+            this.style.height = "auto";
+            this.style.height = `${this.scrollHeight}px`;
+          });
+  }
+
+
   agregarEditarNoticia(){
+    if(this.crearNoticia.invalid){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Recuerda agregar toda la información necesaria (TITULO - IMAGEN O VIDEO  Y UNA DESCRIPCÓN)',
+      })
+      return;
+     }
+
     if(this.id === null){
       this.agregarNoticia();
     }else{

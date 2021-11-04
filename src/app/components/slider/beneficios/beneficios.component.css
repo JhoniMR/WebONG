@@ -1,17 +1,13 @@
 /* CONTENIDO DEL TEXTO */
 
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-.sinColor {
-  background: #f0ffff00;
-  border: none;
-}
-
-textarea#floatingTextarea2 {
+.descripcion-texto{
   font-family: 'Poppins', sans-serif;
-  text-align: justify;
+  text-align: justify; 
+  white-space: pre-wrap;
   font-size: 16px;
 }
+
 /*  FIN DEL CONTENIDO */
 .btn-fromHome{
   text-align: end;
@@ -108,8 +104,7 @@ body {
   }
   
   .resume .resume-item h4 {
-    line-height: 18px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;

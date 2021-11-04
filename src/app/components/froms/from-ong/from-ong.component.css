@@ -12,6 +12,25 @@
     background-size: cover;
     background-repeat: no-repeat;
     }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+textarea {
+  font-family: 'Poppins', sans-serif;
+  text-align: justify;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+}
+
+textarea:is(:focus, :valid){
+  border-color: #6bd098;
+  border-width: 2px;
+}
+
+textarea::-webkit-scrollbar{
+    width: 0px;
+    height: auto;
+}
     
     .contenedorFormulario{
       margin-top: 126px;

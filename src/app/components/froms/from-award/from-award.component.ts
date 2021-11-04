@@ -48,6 +48,17 @@ export class FromAwardComponent implements OnInit {
 
   ngOnInit(): void {
     this.esEdit();
+    this.textarea();
+  }
+
+  textarea(){
+    const myText = document.getElementById("my-text");
+          myText.style.cssText = `height: ${myText.scrollHeight}px; overflow-y: hidden`;
+          
+          myText.addEventListener("input", function(){
+            this.style.height = "auto";
+            this.style.height = `${this.scrollHeight}px`;
+          });
   }
 
   agregarEditarNoticia(){
@@ -120,11 +131,10 @@ export class FromAwardComponent implements OnInit {
   async uploadFile(event){
     this.cargaimg = true;
     const file = event.target.files[0];
-    const name = 'condecoracion.png';
+    const name = event.target.files[0].name;
     const fileRef = this.angularFireStorage.ref(name); 
     const task = this.angularFireStorage.upload(name, file);
     
-
     task.snapshotChanges()
     .pipe(
       finalize(() =>{

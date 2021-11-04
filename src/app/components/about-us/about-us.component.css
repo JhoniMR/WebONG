@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.descripcion-texto{
+  font-family: 'Poppins', sans-serif;
+  text-align: justify; 
+  white-space: pre-wrap;
+  font-size: 16px;
+}
+
+.colortexto{
+  color: rgb(255, 255, 255);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -107,11 +119,7 @@ body {
   .resume .resume-item ul li {
     padding-bottom: 10px;
   }
-  
-  .resume .resume-item:last-child {
-    padding-bottom: 0;
-  }
-  
+    
   .resume .resume-item::before {
     content: "";
     position: absolute;

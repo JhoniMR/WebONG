@@ -38,6 +38,8 @@ import { FromAbeneficiosComponent } from './components/froms/from-abeneficios/fr
 import { ErrordesarrolloComponent } from './components/errordesarrollo/errordesarrollo.component';
 import { FromVoluntarypaymentsComponent } from './components/froms/from-voluntarypayments/from-voluntarypayments.component';
 import { TablaPagosComponent } from './components/tabla-pagos/tabla-pagos.component';
+import { FromchatComponent } from './components/froms/fromchat/fromchat.component';
+import { EventsComponent } from './components/events/events.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -54,6 +56,11 @@ const routes: Routes =[
     { path: 'home',               component: HomeComponent},
 
     { path: 'payments',           component: PaymentsComponent},
+
+    { path: 'events',        component: EventsComponent, canActivate:[AngularFireAuthGuard]},
+
+    { path: 'fromchat',        component: FromchatComponent, canActivate:[AngularFireAuthGuard]},
+    { path: 'fromchat/:id',        component: FromchatComponent, canActivate:[AngularFireAuthGuard]},
   
     
     { path: 'from-home',        component: FromHomeComponent, canActivate:[AngularFireAuthGuard]},
@@ -63,8 +70,6 @@ const routes: Routes =[
     { path: 'from-volunteerspayments',  component: FromVoluntarypaymentsComponent},
     { path: 'tablapayments',  component: TablaPagosComponent, canActivate:[AngularFireAuthGuard]},
     
-    
-
     { path: 'from-services',    component: FromServicesComponent, canActivate:[AngularFireAuthGuard]},
     { path: 'from-services/:id',    component: FromServicesComponent, canActivate:[AngularFireAuthGuard]},
 

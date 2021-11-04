@@ -34,7 +34,7 @@
                     <ngb-carousel>
                         <ng-template ngbSlide>
                             <a href="/#/nuestraOng">
-                            <img class="fondo" src="https://cdn.pixabay.com/photo/2021/09/16/21/53/nature-6631144_960_720.jpg" alt="Random first slide">
+                            <img class="slider" src="https://cdn.pixabay.com/photo/2021/09/16/21/53/nature-6631144_960_720.jpg" alt="Random first slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>NUESTRA ONG</p>
@@ -42,7 +42,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/nuestraOng">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/16/21/53/nature-6631144_960_720.jpg" alt="Random second slide">
+                            <img class="slider"src="https://cdn.pixabay.com/photo/2021/09/16/21/53/nature-6631144_960_720.jpg" alt="Random second slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>NUESTRA ONG</p>
@@ -50,7 +50,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/nuestraOng">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/16/21/53/nature-6631144_960_720.jpg" alt="Random third slide">
+                            <img  class="slider" src="https://cdn.pixabay.com/photo/2021/09/16/21/53/nature-6631144_960_720.jpg" alt="Random third slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>NUESTRA ONG</p>
@@ -66,7 +66,7 @@
                     <ngb-carousel>
                         <ng-template ngbSlide>
                             <a href="/#/ejesTransversales">
-                            <img src="https://cdn.pixabay.com/photo/2021/08/19/14/00/field-6558125_960_720.jpg" alt="Random first slide">
+                            <img  class="slider" src="https://cdn.pixabay.com/photo/2021/08/19/14/00/field-6558125_960_720.jpg" alt="Random first slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>EJES TRASNSVERSALES</p>
@@ -74,7 +74,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/ejesTransversales">
-                            <img src="https://cdn.pixabay.com/photo/2021/08/19/14/00/field-6558125_960_720.jpg" alt="Random second slide">
+                            <img  class="slider" src="https://cdn.pixabay.com/photo/2021/08/19/14/00/field-6558125_960_720.jpg" alt="Random second slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>EJES TRASNSVERSALES</p>
@@ -82,7 +82,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/ejesTransversales">
-                            <img src="https://cdn.pixabay.com/photo/2021/08/19/14/00/field-6558125_960_720.jpg" alt="Random third slide">
+                            <img  class="slider" src="https://cdn.pixabay.com/photo/2021/08/19/14/00/field-6558125_960_720.jpg" alt="Random third slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>EJES TRASNVERSALES</p>
@@ -98,7 +98,7 @@
                     <ngb-carousel>
                         <ng-template ngbSlide>
                             <a href="/#/actividades">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/12/17/43/jogging-6619078_960_720.jpg" alt="Random first slide">
+                            <img  class="slider" src="https://cdn.pixabay.com/photo/2021/09/12/17/43/jogging-6619078_960_720.jpg" alt="Random first slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>ACTIVIDADES</p>
@@ -106,7 +106,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/actividades">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/12/17/43/jogging-6619078_960_720.jpg" alt="Random second slide">
+                            <img  class="slider" src="https://cdn.pixabay.com/photo/2021/09/12/17/43/jogging-6619078_960_720.jpg" alt="Random second slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>ACTIVIDADES</p>
@@ -114,7 +114,7 @@
                         </ng-template>
                         <ng-template ngbSlide>
                             <a href="/#/actividades">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/12/17/43/jogging-6619078_960_720.jpg" alt="Random third slide">
+                            <img  class="slider" src="https://cdn.pixabay.com/photo/2021/09/12/17/43/jogging-6619078_960_720.jpg" alt="Random third slide">
                             </a>
                             <div class="carousel-caption">
                                 <p>ACTIVIDADES</p>
@@ -187,18 +187,17 @@
           </div>
           <div  class="fehaDecreacion"> {{item.fechacreacion | date}}
          </div>
-         <div style="text-align: justify;" class="form-floating">
-            <textarea  class="form-control sinColor" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 400px" disabled>{{item.descripcion}}</textarea>
+         <div class="form-floating">
+            <p class="descripcion-texto" id="floatingTextarea2" >{{item.descripcion}}</p>
          </div>
-         
-            <a class="btn btn-primary"  href="{{item.video}}">VER VIDEO</a>
+            <a *ngIf="item.video == '' == false " class="btn btn-primary"  href="{{item.video}}">VER VIDEO</a>
         
           <div class="iconos" *ngIf="user$ | async as user; else botones">
                 <a  [routerLink]="[ '/editFrom', item.id ]"> <img  class="editar" src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/40/000000/external-pencil-school-and-learning-flatart-icons-flat-flatarticons.png"/></a>
                 <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>  
          </div>
        </div>
-     </div>
+     </div> 
    </div>
 
   

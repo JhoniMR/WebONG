@@ -38,8 +38,8 @@
           </div>
 
           <h2>{{item.titulo}}</h2>
-          <div style="text-align: justify;" class="form-floating">
-            <textarea  class="form-control sinColor" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" disabled>{{item.descripcion}}</textarea>
+          <div class="form-floating">
+            <p class="descripcion-texto" id="floatingTextarea2" >{{item.descripcion}}</p>
          </div>
         </div>
       </div>
@@ -54,8 +54,8 @@
                 <a  (click)="preguntaEliminar(item.id)"> <img class="eliminar" src="https://img.icons8.com/bubbles/50/000000/delete.png"/></a>  
              </div>
               <h4>{{item.titulo}}</h4>
-              <div style="text-align: justify;" class="form-floating">
-                <textarea  class="form-control sinColor" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 350px" disabled>{{item.descripcion}}</textarea>
+              <div class="form-floating">
+                <p class="descripcion-texto" id="floatingTextarea2" >{{item.descripcion}}</p>
              </div>
             </div>
           </div>        

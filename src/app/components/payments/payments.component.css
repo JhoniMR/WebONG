@@ -16,8 +16,16 @@
     margin: auto;
     margin-top: 48px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+p {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  text-align: justify;
+}
 
-
+.centrar-card{
+  margin: auto;
+}
 
 .card {
   margin: auto;
@@ -25,7 +33,12 @@
 
 img.qrBancolombia {
     margin-top: 7px;
-    width: 60%;
+    width: 100%;
+}
+
+img.qrNequi{
+  margin-top: 7px;
+  width: 100%;
 }
 
 .Paypal {
@@ -36,11 +49,6 @@ button.btn.btn-outline-primary {
   position: absolute;
     left: 36%;
     top: 87%;
-}
-
-img.qrNequi {
-  width: 60%;
-  margin-top: 5px;
 }
 
 .alerta-campos {

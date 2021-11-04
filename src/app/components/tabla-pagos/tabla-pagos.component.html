@@ -3,14 +3,20 @@
       <div class="container">
         <div  class="row"> 
             <div *ngFor="let item of informacion | paginate: { itemsPerPage: 12, currentPage: paginacion}"  class="col-md-4"> 
-                <div class="card" style="width: 20rem; height: 32rem; margin-top: 40px;" >
+                <div class="card" style="width: 20rem; height: 34rem; margin-top: 40px;" >
                     <img  [src]="item.imagen" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="titulo">Nombre: {{item.nombres}} {{item.apellidos}}</h5>
-                      <h5>{{item.tipodocumento}}:{{item.cedula}}</h5>
-                      <h5>Correo: {{item.correo}}</h5>
+                      <div class="fecha">
+                       <h5 class="fecha">Fecha: {{item.fechacreacion | date}}</h5>
+                      </div>
+                      <div class="informacion">
+                        <h5 class="titulo">Nombre: {{item.nombres}} {{item.apellidos}}</h5>
+                        <h5>Tel: {{item.numerocelular}}</h5>
+                        <h5>{{item.tipodocumento}}:{{item.cedula}}</h5>
+                        <h5>Correo: {{item.correo}}</h5>
+                      </div>
+                      
                       <a  target="_blank" class="verpago" href="{{item.imagen}}"><i class="nc-icon nc-glasses-2"></i></a>
-            
                       <button type="button" class="btn btn-danger"  (click)="preguntaEliminar(item.id)">Eliminar</button>
                     </div>
                 </div>

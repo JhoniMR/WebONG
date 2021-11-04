@@ -49,6 +49,18 @@ export class FromVoluntarypaymentsComponent implements OnInit {
     }
   
     agregarEditarNoticia(){
+
+      if(this.pagoFrom.invalid){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Todos los campos son necesarios, recuerda llenar toda la información',
+        })
+        return;
+       }
+
+
+
       if(this.id === null){
         this.agregarNoticia();
       }else{
